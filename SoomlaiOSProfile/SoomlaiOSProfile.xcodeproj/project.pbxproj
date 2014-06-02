@@ -24,6 +24,8 @@
 		EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */; };
 		EF356F35193CB6D60081DCE0 /* UserProfileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */; };
 		EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */; };
+		EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */; };
+		EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		EF356F32193CB2060081DCE0 /* IProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IProvider.h; path = domain/IProvider.h; sourceTree = "<group>"; };
 		EF356F33193CB6D60081DCE0 /* UserProfileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileUtils.h; sourceTree = "<group>"; };
 		EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileUtils.m; sourceTree = "<group>"; };
+		EF356F37193CBEEB0081DCE0 /* UserProfileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileStorage.h; path = data/UserProfileStorage.h; sourceTree = "<group>"; };
+		EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileStorage.m; path = data/UserProfileStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			children = (
 				EF356F25193CA1770081DCE0 /* PJSONConsts.h */,
 				EF356F26193CA1770081DCE0 /* PJSONConsts.m */,
+				EF356F37193CBEEB0081DCE0 /* UserProfileStorage.h */,
+				EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
 				EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F35193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
@@ -278,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
 				EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
 				EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */,
@@ -388,6 +396,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SOOMLA_HOME)/ios-blueprint/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
+					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +414,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SOOMLA_HOME)/ios-blueprint/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
+					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
