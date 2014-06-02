@@ -74,6 +74,8 @@
 		EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileUtils.m; sourceTree = "<group>"; };
 		EF356F37193CBEEB0081DCE0 /* UserProfileStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileStorage.h; path = data/UserProfileStorage.h; sourceTree = "<group>"; };
 		EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileStorage.m; path = data/UserProfileStorage.m; sourceTree = "<group>"; };
+		EFAE6BD0193CC7980077EF7F /* IAuthProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAuthProvider.h; path = auth/IAuthProvider.h; sourceTree = "<group>"; };
+		EFAE6BD3193CD3F60077EF7F /* ISocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISocialProvider.h; path = social/ISocialProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,8 @@
 		EF356EFF193C90560081DCE0 /* SoomlaiOSProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EFAE6BD2193CD3D80077EF7F /* social */,
+				EFAE6BCF193CC7800077EF7F /* auth */,
 				EF356F29193CA50B0081DCE0 /* domain */,
 				EF356F24193CA1550081DCE0 /* data */,
 				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
@@ -189,6 +193,22 @@
 				EF356F32193CB2060081DCE0 /* IProvider.h */,
 			);
 			name = domain;
+			sourceTree = "<group>";
+		};
+		EFAE6BCF193CC7800077EF7F /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE6BD0193CC7980077EF7F /* IAuthProvider.h */,
+			);
+			name = auth;
+			sourceTree = "<group>";
+		};
+		EFAE6BD2193CD3D80077EF7F /* social */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE6BD3193CD3F60077EF7F /* ISocialProvider.h */,
+			);
+			name = social;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +497,7 @@
 				EF356F1F193C90560081DCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF356F20193C90560081DCE0 /* Build configuration list for PBXNativeTarget "SoomlaiOSProfileTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +506,7 @@
 				EF356F22193C90560081DCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
