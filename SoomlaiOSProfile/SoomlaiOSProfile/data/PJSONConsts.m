@@ -16,14 +16,14 @@
 
 /** User Profile **/
 
-extern NSString *const UP_PROVIDER         = @"provider";
-extern NSString *const UP_PROFILEID        = @"profileId";
-extern NSString *const UP_USERNAME         = @"username";
-extern NSString *const UP_EMAIL            = @"email";
-extern NSString *const UP_FIRSTNAME        = @"firstName";
-extern NSString *const UP_LASTNAME         = @"lastName";
-extern NSString *const UP_AVATAR           = @"avatarLink";
-extern NSString *const UP_LOCATION         = @"location";
-extern NSString *const UP_GENDER           = @"gender";
-extern NSString *const UP_LANGUAGE         = @"language";
-extern NSString *const UP_BIRTHDAY         = @"birthday";
+NSString *const UP_PROVIDER         = @"provider";
+NSString *const UP_PROFILEID        = @"profileId";
+NSString *const UP_USERNAME         = @"username";
+NSString *const UP_EMAIL            = @"email";
+NSString *const UP_FIRSTNAME        = @"firstName";
+NSString *const UP_LASTNAME         = @"lastName";
+NSString *const UP_AVATAR           = @"avatarLink";
+NSString *const UP_LOCATION         = @"location";
+NSString *const UP_GENDER           = @"gender";
+NSString *const UP_LANGUAGE         = @"language";
+NSString *const UP_BIRTHDAY         = @"birthday";
