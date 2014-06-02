@@ -11,50 +11,37 @@
 @implementation UserProfileUtils
 
 + (NSString *)providerEnumToString:(enum Provider)provider {
-    NSString *result = nil;
     
     switch(provider) {
         case FACEBOOK:
-            result = @"facebook";
-            break;
+            return @"facebook";
         case FOURSQUARE:
-            result = @"foursquare";
-            break;
+            return @"foursquare";
         case GOOGLE:
-            result = @"google";
-            break;
+            return @"google";
         case LINKEDIN:
-            result = @"linkedin";
-            break;
+            return @"linkedin";
         case MYSPACE:
-            result = @"myspace";
-            break;
+            return @"myspace";
         case TWITTER:
-            result = @"twitter";
-            break;
+            return @"twitter";
         case YAHOO:
-            result = @"yahoo";
-            break;
+            return @"yahoo";
         case SALESFORCE:
-            result = @"salesforce";
-            break;
+            return @"salesforce";
         case YAMMER:
-            result = @"yammer";
-            break;
+            return @"yammer";
         case RUNKEEPER:
-            result = @"runkeeper";
-            break;
+            return @"runkeeper";
         case INSTAGRAM:
-            result = @"instagram";
-            break;
+            return @"instagram";
         case FLICKR:
-            result = @"flickr";
-            break;
+            return @"flickr";
         default:
             [NSException raise:NSGenericException format:@"Unexpected FormatType."];
     }
     
-    return result;
+    return nil;
 }
 
 + (enum Provider)providerStringToEnum:(NSString *)provider {
