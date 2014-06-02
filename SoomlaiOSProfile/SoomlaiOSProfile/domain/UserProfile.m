@@ -14,7 +14,7 @@
 @synthesize provider, profileId, email, username, firstName, lastName, avatarLink, location, gender, language, birthday;
 
 
-- (id)initWithProvider:(NSString *)oProvider
+- (id)initWithProvider:(enum Provider)oProvider
           andProfileId:(NSString *)oProfileId
            andUsername:(NSString *)oUsername
               andEmail:(NSString *)oEmail
@@ -22,7 +22,7 @@
            andLastName:(NSString *)oLastName {
 
     if (self = [super init]) {
-        self.provider = oProvider;
+        provider = oProvider;
         self.profileId = oProfileId;
         self.username = oUsername;
         self.email = oEmail;
@@ -35,7 +35,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
-        self.provider = [dict objectForKey:UP_PROVIDER];
+        provider = [UserProfileUtils providerStringToEnum:[dict objectForKey:UP_PROVIDER]];
         self.profileId = [dict objectForKey:UP_PROFILEID];
         self.username = [dict objectForKey:UP_USERNAME];
         self.email = [dict objectForKey:UP_EMAIL];
@@ -53,7 +53,7 @@
 
 - (NSDictionary*)toDictionary {
     return [[NSDictionary alloc] initWithObjectsAndKeys:
-            self.provider, UP_PROVIDER,
+            [UserProfileUtils providerEnumToString:self.provider], UP_PROVIDER,
             self.profileId, UP_PROFILEID,
             self.username, UP_USERNAME,
             self.email, UP_EMAIL,

@@ -6,12 +6,13 @@
 //  Copyright (c) 2014 Soomla. All rights reserved.
 //
 
+#import "UserProfileUtils.h"
+
 @interface UserProfile : NSObject {
     
     @private
     
-    // TODO: enumify (everywhere - don't forget class implementation)
-    NSString* provider;
+    Provider provider;
     NSString* profileId;
     NSString* username;
     NSString* email;
@@ -24,7 +25,7 @@
     NSString* birthday;
 }
 
-@property (strong, nonatomic) NSString* provider;
+@property (readonly, nonatomic) enum Provider provider;
 @property (strong, nonatomic) NSString* profileId;
 @property (strong, nonatomic) NSString* username;
 @property (strong, nonatomic) NSString* email;
@@ -36,7 +37,7 @@
 @property (strong, nonatomic) NSString* language;
 @property (strong, nonatomic) NSString* birthday;
 
-- (id)initWithProvider:(NSString *)oProvider
+- (id)initWithProvider:(enum Provider)oProvider
           andProfileId:(NSString *)oProfileId
            andUsername:(NSString *)oUsername
               andEmail:(NSString *)oEmail
