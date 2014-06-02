@@ -20,6 +20,8 @@
 		EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F26193CA1770081DCE0 /* PJSONConsts.m */; };
 		EF356F2C193CA52E0081DCE0 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F2B193CA52E0081DCE0 /* UserProfile.m */; };
 		EF356F2D193CA52E0081DCE0 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F2B193CA52E0081DCE0 /* UserProfile.m */; };
+		EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */; };
+		EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		EF356F26193CA1770081DCE0 /* PJSONConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJSONConsts.m; path = data/PJSONConsts.m; sourceTree = "<group>"; };
 		EF356F2A193CA52E0081DCE0 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfile.h; path = domain/UserProfile.h; sourceTree = "<group>"; };
 		EF356F2B193CA52E0081DCE0 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfile.m; path = domain/UserProfile.m; sourceTree = "<group>"; };
+		EF356F2E193CAD580081DCE0 /* UserProfileEventHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileEventHandling.h; sourceTree = "<group>"; };
+		EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileEventHandling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
 				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
 				EF356F00193C90560081DCE0 /* Supporting Files */,
+				EF356F2E193CAD580081DCE0 /* UserProfileEventHandling.h */,
+				EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */,
 			);
 			path = SoomlaiOSProfile;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
 				EF356F05193C90560081DCE0 /* SoomlaiOSProfile.m in Sources */,
 				EF356F2C193CA52E0081DCE0 /* UserProfile.m in Sources */,
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */,
 				EF356F1A193C90560081DCE0 /* SoomlaiOSProfileTests.m in Sources */,
 				EF356F2D193CA52E0081DCE0 /* UserProfile.m in Sources */,
