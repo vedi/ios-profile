@@ -26,6 +26,11 @@
 		EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */; };
 		EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */; };
 		EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */; };
+		EFAE6BD6193CDEEE0077EF7F /* ProviderLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BD5193CDEEE0077EF7F /* ProviderLoader.m */; };
+		EFAE6BD7193CDEEE0077EF7F /* ProviderLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BD5193CDEEE0077EF7F /* ProviderLoader.m */; };
+		EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */; };
+		EFAE6BDC193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */; };
+		EFAE6BE1193DC1ED0077EF7F /* SoomlaiOSProfile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAE6BDD193DAD8E0077EF7F /* SoomlaiOSProfile-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,11 @@
 		EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileStorage.m; path = data/UserProfileStorage.m; sourceTree = "<group>"; };
 		EFAE6BD0193CC7980077EF7F /* IAuthProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAuthProvider.h; path = auth/IAuthProvider.h; sourceTree = "<group>"; };
 		EFAE6BD3193CD3F60077EF7F /* ISocialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISocialProvider.h; path = social/ISocialProvider.h; sourceTree = "<group>"; };
+		EFAE6BD4193CDEEE0077EF7F /* ProviderLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProviderLoader.h; sourceTree = "<group>"; };
+		EFAE6BD5193CDEEE0077EF7F /* ProviderLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProviderLoader.m; sourceTree = "<group>"; };
+		EFAE6BD9193DA38E0077EF7F /* ProviderNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProviderNotFoundException.h; path = exceptions/ProviderNotFoundException.h; sourceTree = "<group>"; };
+		EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProviderNotFoundException.m; path = exceptions/ProviderNotFoundException.m; sourceTree = "<group>"; };
+		EFAE6BDD193DAD8E0077EF7F /* SoomlaiOSProfile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SoomlaiOSProfile-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,7 @@
 		EF356EFF193C90560081DCE0 /* SoomlaiOSProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EFAE6BD8193DA3670077EF7F /* exceptions */,
 				EFAE6BD2193CD3D80077EF7F /* social */,
 				EFAE6BCF193CC7800077EF7F /* auth */,
 				EF356F29193CA50B0081DCE0 /* domain */,
@@ -144,6 +155,8 @@
 				EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */,
 				EF356F33193CB6D60081DCE0 /* UserProfileUtils.h */,
 				EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */,
+				EFAE6BD4193CDEEE0077EF7F /* ProviderLoader.h */,
+				EFAE6BD5193CDEEE0077EF7F /* ProviderLoader.m */,
 			);
 			path = SoomlaiOSProfile;
 			sourceTree = "<group>";
@@ -152,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				EF356F01193C90560081DCE0 /* SoomlaiOSProfile-Prefix.pch */,
+				EFAE6BDD193DAD8E0077EF7F /* SoomlaiOSProfile-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -209,6 +223,15 @@
 				EFAE6BD3193CD3F60077EF7F /* ISocialProvider.h */,
 			);
 			name = social;
+			sourceTree = "<group>";
+		};
+		EFAE6BD8193DA3670077EF7F /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				EFAE6BD9193DA38E0077EF7F /* ProviderNotFoundException.h */,
+				EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */,
+			);
+			name = exceptions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF356F18193C90560081DCE0 /* InfoPlist.strings in Resources */,
+				EFAE6BE1193DC1ED0077EF7F /* SoomlaiOSProfile-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +317,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
+				EFAE6BD6193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F35193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
+				EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F05193C90560081DCE0 /* SoomlaiOSProfile.m in Sources */,
 				EF356F2C193CA52E0081DCE0 /* UserProfile.m in Sources */,
 			);
@@ -306,9 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
+				EFAE6BD7193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
 				EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */,
+				EFAE6BDC193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F1A193C90560081DCE0 /* SoomlaiOSProfileTests.m in Sources */,
 				EF356F2D193CA52E0081DCE0 /* UserProfile.m in Sources */,
 			);
