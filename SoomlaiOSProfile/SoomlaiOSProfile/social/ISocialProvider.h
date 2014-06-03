@@ -8,13 +8,6 @@
 
 #import "IAuthProvider.h"
 
-typedef NS_ENUM(NSInteger, SocialActionType) {
-    UpdateStatus,
-    PublishFeed,
-    UploadImage,
-    UploadVideo
-};
-
 
 // Define block signatures
 
@@ -29,15 +22,15 @@ typedef void (^contactsActionFail)(NSString* message);
 
 - (void)updateStatus:(NSString *)status success:(socialActionSuccess)success fail:(socialActionFail)fail;
 
-- (void)updateStoryWithMessage:(NSString *)message
-                       andName:(NSString *)name
-                    andCaption:(NSString *)caption
-                andDescription:(NSString *)description
-                       andLink:(NSString *)link
-                    andPicture:(NSString *)picture
-                       success:(socialActionSuccess)success
-                          fail:(socialActionFail)fail;
-
-- (void)getContacts success:(contactsActionSuccess)success fail:(contactsActionFail)fail;
+//- (void)updateStoryWithMessage:(NSString *)message
+//                       andName:(NSString *)name
+//                    andCaption:(NSString *)caption
+//                andDescription:(NSString *)description
+//                       andLink:(NSString *)link
+//                    andPicture:(NSString *)picture
+//                       success:(socialActionSuccess)success
+//                          fail:(socialActionFail)fail;
+//
+//- (void)getContacts:(contactsActionSuccess)success fail:(contactsActionFail)fail;
 
 @end

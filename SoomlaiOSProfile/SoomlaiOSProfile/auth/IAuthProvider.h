@@ -12,7 +12,8 @@
 
 // Define block signatures
 
-typedef void (^loginSuccess)(enum Provider);
+// TODO: Check if provider parameter is needed into this block.  It's not needed in the social blocks
+typedef void (^loginSuccess)(enum Provider provider);
 typedef void (^loginFail)(NSString* message);
 typedef void (^loginCancel)();
 typedef void (^userProfileSuccess)(UserProfile* userProfile);
@@ -23,10 +24,10 @@ typedef void (^logoutFail)(NSString* message);
 
 @protocol IAuthProvider <NSObject>
 
-- (void)login fail:(loginSuccess)success fail:(loginFail)fail cancel:(loginCancel)cancel;
+- (void)login:(loginSuccess)success fail:(loginFail)fail cancel:(loginCancel)cancel;
 
 - (void)getUserProfile:(userProfileSuccess)success fail:(userProfileFail)fail;
 
-- (void)logout success:(logoutSuccess)success fail:(logoutFail)fail;
+- (void)logout:(logoutSuccess)success fail:(logoutFail)fail;
 
 @end

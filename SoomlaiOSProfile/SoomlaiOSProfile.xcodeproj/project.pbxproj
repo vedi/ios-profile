@@ -31,6 +31,12 @@
 		EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */; };
 		EFAE6BDC193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */; };
 		EFAE6BE1193DC1ED0077EF7F /* SoomlaiOSProfile-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFAE6BDD193DAD8E0077EF7F /* SoomlaiOSProfile-Info.plist */; };
+		EFAE6BE4193DC2B50077EF7F /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BE3193DC2B50077EF7F /* AuthController.m */; };
+		EFAE6BE5193DC2B50077EF7F /* AuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BE3193DC2B50077EF7F /* AuthController.m */; };
+		EFAE6BE8193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */; };
+		EFAE6BE9193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */; };
+		EFAE6BEC193DDB5D0077EF7F /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BEB193DDB5D0077EF7F /* SocialController.m */; };
+		EFAE6BED193DDB5D0077EF7F /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BEB193DDB5D0077EF7F /* SocialController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +67,7 @@
 		EF356EFD193C90560081DCE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF356F01193C90560081DCE0 /* SoomlaiOSProfile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoomlaiOSProfile-Prefix.pch"; sourceTree = "<group>"; };
 		EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoomlaiOSProfile.h; sourceTree = "<group>"; };
-		EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoomlaiOSProfile.m; sourceTree = "<group>"; };
+		EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SoomlaiOSProfile.m; path = SoomlaiOSProfile/SoomlaiOSProfile.m; sourceTree = "<group>"; };
 		EF356F0A193C90560081DCE0 /* SoomlaiOSProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoomlaiOSProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF356F0B193C90560081DCE0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EF356F0E193C90560081DCE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,6 +92,13 @@
 		EFAE6BD9193DA38E0077EF7F /* ProviderNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProviderNotFoundException.h; path = exceptions/ProviderNotFoundException.h; sourceTree = "<group>"; };
 		EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProviderNotFoundException.m; path = exceptions/ProviderNotFoundException.m; sourceTree = "<group>"; };
 		EFAE6BDD193DAD8E0077EF7F /* SoomlaiOSProfile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SoomlaiOSProfile-Info.plist"; sourceTree = "<group>"; };
+		EFAE6BE2193DC2B50077EF7F /* AuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthController.h; sourceTree = "<group>"; };
+		EFAE6BE3193DC2B50077EF7F /* AuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthController.m; sourceTree = "<group>"; };
+		EFAE6BE6193DC6310077EF7F /* UserProfileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileNotFoundException.h; path = exceptions/UserProfileNotFoundException.h; sourceTree = "<group>"; };
+		EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileNotFoundException.m; path = exceptions/UserProfileNotFoundException.m; sourceTree = "<group>"; };
+		EFAE6BEA193DDB5D0077EF7F /* SocialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialController.h; sourceTree = "<group>"; };
+		EFAE6BEB193DDB5D0077EF7F /* SocialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialController.m; sourceTree = "<group>"; };
+		EFAE6BEE193DDFC20077EF7F /* SocialActionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialActionUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +131,7 @@
 				EF356F13193C90560081DCE0 /* SoomlaiOSProfileTests */,
 				EF356EFC193C90560081DCE0 /* Frameworks */,
 				EF356EFB193C90560081DCE0 /* Products */,
+				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,13 +157,13 @@
 		EF356EFF193C90560081DCE0 /* SoomlaiOSProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EF356F14193C90560081DCE0 /* Supporting Files */,
 				EFAE6BD8193DA3670077EF7F /* exceptions */,
 				EFAE6BD2193CD3D80077EF7F /* social */,
 				EFAE6BCF193CC7800077EF7F /* auth */,
 				EF356F29193CA50B0081DCE0 /* domain */,
 				EF356F24193CA1550081DCE0 /* data */,
 				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
-				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
 				EF356F00193C90560081DCE0 /* Supporting Files */,
 				EF356F2E193CAD580081DCE0 /* UserProfileEventHandling.h */,
 				EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */,
@@ -157,6 +171,11 @@
 				EF356F34193CB6D60081DCE0 /* UserProfileUtils.m */,
 				EFAE6BD4193CDEEE0077EF7F /* ProviderLoader.h */,
 				EFAE6BD5193CDEEE0077EF7F /* ProviderLoader.m */,
+				EFAE6BE2193DC2B50077EF7F /* AuthController.h */,
+				EFAE6BE3193DC2B50077EF7F /* AuthController.m */,
+				EFAE6BEA193DDB5D0077EF7F /* SocialController.h */,
+				EFAE6BEB193DDB5D0077EF7F /* SocialController.m */,
+				EFAE6BEE193DDFC20077EF7F /* SocialActionUtils.h */,
 			);
 			path = SoomlaiOSProfile;
 			sourceTree = "<group>";
@@ -174,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				EF356F19193C90560081DCE0 /* SoomlaiOSProfileTests.m */,
-				EF356F14193C90560081DCE0 /* Supporting Files */,
 			);
 			path = SoomlaiOSProfileTests;
 			sourceTree = "<group>";
@@ -186,7 +204,8 @@
 				EF356F16193C90560081DCE0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
+			path = SoomlaiOSProfileTests;
+			sourceTree = SOURCE_ROOT;
 		};
 		EF356F24193CA1550081DCE0 /* data */ = {
 			isa = PBXGroup;
@@ -230,6 +249,8 @@
 			children = (
 				EFAE6BD9193DA38E0077EF7F /* ProviderNotFoundException.h */,
 				EFAE6BDA193DA38E0077EF7F /* ProviderNotFoundException.m */,
+				EFAE6BE6193DC6310077EF7F /* UserProfileNotFoundException.h */,
+				EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */,
 			);
 			name = exceptions;
 			sourceTree = "<group>";
@@ -316,10 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAE6BE4193DC2B50077EF7F /* AuthController.m in Sources */,
+				EFAE6BEC193DDB5D0077EF7F /* SocialController.m in Sources */,
 				EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
 				EFAE6BD6193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F35193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
+				EFAE6BE8193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
 				EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F05193C90560081DCE0 /* SoomlaiOSProfile.m in Sources */,
@@ -331,10 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAE6BE5193DC2B50077EF7F /* AuthController.m in Sources */,
+				EFAE6BED193DDB5D0077EF7F /* SocialController.m in Sources */,
 				EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
 				EFAE6BD7193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
+				EFAE6BE9193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */,
 				EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */,
 				EFAE6BDC193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F1A193C90560081DCE0 /* SoomlaiOSProfileTests.m in Sources */,
