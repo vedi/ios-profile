@@ -7,7 +7,6 @@
 //
 
 #import "ProviderLoader.h"
-#import "IProvider.h"
 #import "ProviderNotFoundException.h"
 #import "UserProfileEventHandling.h"
 #import "EventHandling.h"
@@ -63,13 +62,13 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     // BusProvider.getInstance().post(new UnexpectedStoreErrorEvent(message));
 }
 
-- (id)getProvider:(enum Provider)provider {
-    Provider p = [[self.providers objectForKey:@(provider)] intValue];
+- (id<IProvider>)getProvider:(enum Provider)provider {
+    id<IProvider> p = [self.providers objectForKey:@(provider)];
     if (!p) {
         @throw [[ProviderNotFoundException alloc] initWithProvider:provider];
     }
     
-    return @(p);
+    return p;
 }
 
 

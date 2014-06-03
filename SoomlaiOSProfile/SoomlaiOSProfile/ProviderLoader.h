@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileUtils.h"
+#import "IProvider.h"
 
 
 // TODO: Document Abstract class
@@ -25,7 +26,7 @@
 
 - (void)handleErrorResultWithMessage:(NSString *)message;
 
-- (id)getProvider:(enum Provider)provider;
+- (id<IProvider>)getProvider:(enum Provider)provider;
 
 
 @end
