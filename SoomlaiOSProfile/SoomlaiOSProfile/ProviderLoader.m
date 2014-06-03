@@ -97,7 +97,12 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     NSMutableArray* providersArr = [NSMutableArray array];
     if ([providerTokens count] > 0) {
         for (NSString* token in providerTokens) {
-            Class aClass = NSClassFromString([providerPkgPrefix stringByAppendingString:token]);
+            
+            // TODO: Check if the providerPkgPrefix can be omitted completely in iOS
+            // This is the original line of code:
+            // Class aClass = NSClassFromString([providerPkgPrefix stringByAppendingString:token]);
+            
+            Class aClass = NSClassFromString(token);
             [providersArr addObject:aClass];
         }
     }
