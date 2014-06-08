@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Soomla. All rights reserved.
 //
 
-#import "ProviderLoader.h"
+#import "AuthController.h"
 #import "UserProfileUtils.h"
 
 @class Reward;
 
-@interface SocialController : ProviderLoader
+@interface SocialController : AuthController
 
 - (id)init;
 
