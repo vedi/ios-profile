@@ -78,6 +78,27 @@ static NSString* TAG = @"SOOMLA SocialController";
 
 - (void)uploadImageWithProvider:(enum Provider)provider
                      andMessage:(NSString *)message
+                    andFilePath:(NSString *)filePath
+                      andReward:(Reward *)reward {
+    
+    id<ISocialProvider> socialProvider = (id<ISocialProvider>)[self getProvider:provider];
+    
+    // Perform upload image process
+    [UserProfileEventHandling postSocialActionStarted:UploadImage];
+    [socialProvider uploadImageWithMessage:message andFilePath:filePath success:^{
+        
+        [UserProfileEventHandling postSocialActionFinished:UploadImage];
+        if (reward) {
+            [reward give];
+        }
+    } fail:^(NSString *message) {
+        [UserProfileEventHandling postSocialActionFailed:UploadImage withMessage:message];
+    }];
+}
+
+
+- (void)uploadImageWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
                     andFileName:(NSString *)fileName
                       andBitmap:(Bitmap *)bitmap
                  andJpegQuality:(int)jpegQuality

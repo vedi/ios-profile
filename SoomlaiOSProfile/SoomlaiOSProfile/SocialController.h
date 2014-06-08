@@ -28,6 +28,11 @@
 
 - (void)uploadImageWithProvider:(enum Provider)provider
                      andMessage:(NSString *)message
+                    andFilePath:(NSString *)filePath
+                      andReward:(Reward *)reward;
+
+- (void)uploadImageWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
                     andFileName:(NSString *)fileName
                       andBitmap:(Bitmap *)bitmap
                  andJpegQuality:(int)jpegQuality
