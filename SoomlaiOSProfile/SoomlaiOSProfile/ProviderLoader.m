@@ -86,24 +86,21 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
         return nil;
     }
     
-    NSString* providersStr = settings[manifestKey];
-    if (!providersStr || [providersStr length] == 0) {
+    NSArray* providerClassNames = settings[manifestKey];
+    if (![providerClassNames count]) {
         LogDebug(TAG, ([NSString stringWithFormat:@"Failed to load provider from SoomlaiOSProfile-Info.plist. manifest key: %@", manifestKey]));
         return nil;
     }
     
-    NSArray* providerTokens = [providersStr componentsSeparatedByString:@","];
     NSMutableArray* providersArr = [NSMutableArray array];
-    if ([providerTokens count] > 0) {
-        for (NSString* token in providerTokens) {
-            
-            // TODO: Check if the providerPkgPrefix can be omitted completely in iOS
-            // This is the original line of code:
-            // Class aClass = NSClassFromString([providerPkgPrefix stringByAppendingString:token]);
-            
-            Class aClass = NSClassFromString(token);
-            [providersArr addObject:aClass];
-        }
+    for (NSString* providerItem in providerClassNames) {
+        
+        // TODO: Check if the providerPkgPrefix can be omitted completely in iOS
+        // This is the original line of code:
+        // Class aClass = NSClassFromString([providerPkgPrefix stringByAppendingString:token]);
+        
+        Class aClass = NSClassFromString(providerItem);
+        [providersArr addObject:aClass];
     }
     
     return providersArr;

@@ -23,7 +23,7 @@ static NSString* TAG = @"SOOMLA AuthController";
     if (self = [super init]) {
 
         // TODO: Check if providerPkgPrefix can be omitted completely in iOS
-        if (![self loadProvidersWithManifestKey:@"auth.provider" andProviderPkgPrefix:@"com.soomla.profile.auth."]) {
+        if (![self loadProvidersWithManifestKey:@"com.soomla.auth.provider" andProviderPkgPrefix:@"com.soomla.profile.auth."]) {
             NSString* msg = @"You don't have a IAuthProvider service attached. \
                             Decide which IAuthProvider you want, add it to SoomlaiOSProfile-Info.plist \
                             and add its static libraries and headers to the target's search path.";

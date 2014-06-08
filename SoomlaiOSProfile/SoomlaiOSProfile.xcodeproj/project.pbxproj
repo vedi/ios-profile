@@ -470,7 +470,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SOOMLA_HOME)/ios-blueprint/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
+					"$(SOOMLA_HOME)/ios-levelup/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
 					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -488,7 +488,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SOOMLA_HOME)/ios-blueprint/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
+					"$(SOOMLA_HOME)/ios-levelup/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
 					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
