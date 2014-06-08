@@ -20,6 +20,6 @@
 
 - (void)logoutWithProvider:(enum Provider)provider;
 
-- (UserProfile *)getUserProfileLocallyWithProvider:(enum Provider)provider;
+- (UserProfile *)getStoredUserProfileWithProvider:(enum Provider)provider;
 
 @end

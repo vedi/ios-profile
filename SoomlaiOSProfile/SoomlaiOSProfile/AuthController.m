@@ -65,7 +65,7 @@ static NSString* TAG = @"SOOMLA AuthController";
     UserProfile* userProfile = nil;
     
     @try {
-        userProfile = [self getUserProfileLocallyWithProvider:provider];
+        userProfile = [self getStoredUserProfileWithProvider:provider];
     }
     @catch (NSException *ex) {
         NSLog(@"%@",[ex callStackSymbols]);
@@ -84,7 +84,7 @@ static NSString* TAG = @"SOOMLA AuthController";
     }];
 }
 
-- (UserProfile *)getUserProfileLocallyWithProvider:(enum Provider)provider {
+- (UserProfile *)getStoredUserProfileWithProvider:(enum Provider)provider {
     UserProfile* userProfile = [UserProfileStorage getUserProfile:provider];
     if (!userProfile) {
         @throw [[UserProfileNotFoundException alloc] init];
