@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EF356EFE193C90560081DCE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF356EFD193C90560081DCE0 /* Foundation.framework */; };
-		EF356F03193C90560081DCE0 /* SoomlaiOSProfile.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */; };
-		EF356F05193C90560081DCE0 /* SoomlaiOSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */; };
+		EF356F03193C90560081DCE0 /* SoomlaProfile.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EF356F02193C90560081DCE0 /* SoomlaProfile.h */; };
+		EF356F05193C90560081DCE0 /* SoomlaProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = EF356F04193C90560081DCE0 /* SoomlaProfile.m */; };
 		EF356F0C193C90560081DCE0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF356F0B193C90560081DCE0 /* XCTest.framework */; };
 		EF356F0D193C90560081DCE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF356EFD193C90560081DCE0 /* Foundation.framework */; };
 		EF356F0F193C90560081DCE0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF356F0E193C90560081DCE0 /* UIKit.framework */; };
@@ -56,7 +56,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EF356F03193C90560081DCE0 /* SoomlaiOSProfile.h in CopyFiles */,
+				EF356F03193C90560081DCE0 /* SoomlaProfile.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +66,8 @@
 		EF356EFA193C90560081DCE0 /* libSoomlaiOSProfile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSoomlaiOSProfile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF356EFD193C90560081DCE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF356F01193C90560081DCE0 /* SoomlaiOSProfile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoomlaiOSProfile-Prefix.pch"; sourceTree = "<group>"; };
-		EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoomlaiOSProfile.h; sourceTree = "<group>"; };
-		EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoomlaiOSProfile.m; sourceTree = "<group>"; };
+		EF356F02193C90560081DCE0 /* SoomlaProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoomlaProfile.h; sourceTree = "<group>"; };
+		EF356F04193C90560081DCE0 /* SoomlaProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoomlaProfile.m; sourceTree = "<group>"; };
 		EF356F0A193C90560081DCE0 /* SoomlaiOSProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoomlaiOSProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF356F0B193C90560081DCE0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EF356F0E193C90560081DCE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -157,8 +157,8 @@
 		EF356EFF193C90560081DCE0 /* SoomlaiOSProfile */ = {
 			isa = PBXGroup;
 			children = (
-				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
-				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
+				EF356F02193C90560081DCE0 /* SoomlaProfile.h */,
+				EF356F04193C90560081DCE0 /* SoomlaProfile.m */,
 				EF356F14193C90560081DCE0 /* Supporting Files */,
 				EFAE6BD8193DA3670077EF7F /* exceptions */,
 				EFAE6BD2193CD3D80077EF7F /* social */,
@@ -348,7 +348,7 @@
 				EFAE6BE8193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
 				EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
-				EF356F05193C90560081DCE0 /* SoomlaiOSProfile.m in Sources */,
+				EF356F05193C90560081DCE0 /* SoomlaProfile.m in Sources */,
 				EF356F2C193CA52E0081DCE0 /* UserProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
