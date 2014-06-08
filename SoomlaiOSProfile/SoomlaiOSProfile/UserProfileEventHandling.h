@@ -27,11 +27,16 @@
 #define EVENT_UP_SOCIAL_ACTION_FINISHED         @"up_social_action_finished"
 #define EVENT_UP_SOCIAL_ACTION_FAILED           @"up_social_action_failed"
 
+#define EVENT_UP_GET_CONTACTS_STARTED           @"up_get_contacs_started"
+#define EVENT_UP_GET_CONTACTS_FINISHED          @"up_get_contacs_finished"
+#define EVENT_UP_GET_CONTACTS_FAILED            @"up_get_contacs_failed"
+
 // UserInfo Elements
 #define DICT_ELEMENT_USER_PROFILE               @"userProfile"
 #define DICT_ELEMENT_PROVIDER                   @"provider"
 #define DICT_ELEMENT_SOCIAL_ACTION_TYPE         @"socialActiontype"
 #define DICT_ELEMENT_MESSAGE                    @"message"
+#define DICT_ELEMENT_CONTACTS                   @"contacts"
 
 
 @interface UserProfileEventHandling : NSObject
@@ -47,5 +52,8 @@
 + (void)postSocialActionStarted:(enum SocialActionType)socialActionType;
 + (void)postSocialActionFinished:(enum SocialActionType)socialActionType;
 + (void)postSocialActionFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
++ (void)postGetContactsStarted:(enum SocialActionType)socialActionType;
++ (void)postGetContactsFinished:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts;
++ (void)postGetContactsFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
 
 @end

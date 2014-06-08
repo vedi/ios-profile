@@ -17,4 +17,25 @@
 
 - (void)updateStatusWithProvider:(enum Provider)provider andStatus:(NSString *)status andReward:(Reward *)reward;
 
+- (void)updateStoryWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
+                        andName:(NSString *)name
+                     andCaption:(NSString *)caption
+                 andDescription:(NSString *)description
+                        andLink:(NSString *)link
+                     andPicture:(NSString *)picture
+                      andReward:(Reward *)reward;
+
+- (void)uploadImageWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
+                    andFileName:(NSString *)fileName
+                      andBitmap:(Bitmap *)bitmap
+                 andJpegQuality:(int)jpegQuality
+                      andReward:(Reward *)reward;
+
+- (void)getContactsWith:(enum Provider)provider andReward:(Reward *)reward;
+
+//- (void)getFeeds:(enum Provider)provider andReward:(Reward *)reward;
+
+
 @end

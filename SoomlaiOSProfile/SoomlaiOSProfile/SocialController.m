@@ -39,6 +39,7 @@ static NSString* TAG = @"SOOMLA SocialController";
     
     
     // Perform update status process
+    [UserProfileEventHandling postSocialActionStarted:UpdateStatus];
     [socialProvider updateStatus:status success:^{
         [UserProfileEventHandling postSocialActionFinished:UpdateStatus];
         
@@ -49,6 +50,88 @@ static NSString* TAG = @"SOOMLA SocialController";
         [UserProfileEventHandling postSocialActionFailed:UpdateStatus withMessage:message];
     }];
 }
+
+- (void)updateStoryWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
+                        andName:(NSString *)name
+                     andCaption:(NSString *)caption
+                 andDescription:(NSString *)description
+                        andLink:(NSString *)link
+                     andPicture:(NSString *)picture
+                      andReward:(Reward *)reward {
+
+    id<ISocialProvider> socialProvider = (id<ISocialProvider>)[self getProvider:provider];
+    
+    // Perform update story process
+    [UserProfileEventHandling postSocialActionStarted:UpdateStory];
+    [socialProvider updateStoryWithMessage:message andName:name andCaption:caption
+                            andDescription:description andLink:link andPicture:picture success:^{
+        
+        [UserProfileEventHandling postSocialActionFinished:UpdateStory];
+        if (reward) {
+            [reward give];
+        }
+    } fail:^(NSString *message) {
+        [UserProfileEventHandling postSocialActionFailed:UpdateStory withMessage:message];
+    }];
+}
+
+- (void)uploadImageWithProvider:(enum Provider)provider
+                     andMessage:(NSString *)message
+                    andFileName:(NSString *)fileName
+                      andBitmap:(Bitmap *)bitmap
+                 andJpegQuality:(int)jpegQuality
+                      andReward:(Reward *)reward {
+    
+    id<ISocialProvider> socialProvider = (id<ISocialProvider>)[self getProvider:provider];
+    
+    // Perform upload image process
+    [UserProfileEventHandling postSocialActionStarted:UploadImage];
+    [socialProvider uploadImageWithMessage:message andFileName:fileName andBitmap:bitmap andJpegQuality:jpegQuality success:^{
+
+        [UserProfileEventHandling postSocialActionFinished:UploadImage];
+        if (reward) {
+            [reward give];
+        }
+    } fail:^(NSString *message) {
+        [UserProfileEventHandling postSocialActionFailed:UploadImage withMessage:message];
+    }];
+}
+
+- (void)getContactsWith:(enum Provider)provider andReward:(Reward *)reward {
+    
+    id<ISocialProvider> socialProvider = (id<ISocialProvider>)[self getProvider:provider];
+    
+    // Perform get contacts process
+    [UserProfileEventHandling postGetContactsStarted:GetContacts];
+    [socialProvider getContacts:^(NSArray *contacts) {
+
+        [UserProfileEventHandling postGetContactsFinished:GetContacts withContacts:contacts];
+        if (reward) {
+            [reward give];
+        }
+    } fail:^(NSString *message) {
+        [UserProfileEventHandling postGetContactsFailed:GetContacts withMessage:message];
+    }];
+}
+
+//- (void)getFeeds:(enum Provider)provider andReward:(Reward *)reward {
+//    
+//    id<ISocialProvider> socialProvider = (id<ISocialProvider>)[self getProvider:provider];
+//    
+//    // Perform get contacts process
+//    [UserProfileEventHandling postSocialActionStarted:GetFeeds];
+//    [socialProvider getContacts:^(NSArray *userProfiles) {
+//        
+//        [UserProfileEventHandling postSocialActionFinished:GetFeeds];
+//        if (reward) {
+//            [reward give];
+//        }
+//    } fail:^(NSString *message) {
+//        [UserProfileEventHandling postSocialActionFailed:GetFeeds withMessage:message];
+//    }];
+//}
+
 
 
 @end

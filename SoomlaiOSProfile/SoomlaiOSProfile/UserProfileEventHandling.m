@@ -68,4 +68,26 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_SOCIAL_ACTION_FAILED object:self userInfo:userInfo];
 }
 
++ (void)postGetContactsStarted:(enum SocialActionType)socialActionType {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(socialActionType) forKey:DICT_ELEMENT_SOCIAL_ACTION_TYPE];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_STARTED object:self userInfo:userInfo];
+}
+
++ (void)postGetContactsFinished:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              @(socialActionType), DICT_ELEMENT_SOCIAL_ACTION_TYPE,
+                              contacts, DICT_ELEMENT_CONTACTS
+                              , nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_FINISHED object:self userInfo:userInfo];
+}
+
++ (void)postGetContactsFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              @(socialActionType), DICT_ELEMENT_SOCIAL_ACTION_TYPE,
+                              message, DICT_ELEMENT_MESSAGE
+                              , nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_FAILED object:self userInfo:userInfo];
+}
+
+
 @end

@@ -9,7 +9,8 @@
 
 typedef NS_ENUM(NSInteger, SocialActionType) {
     UpdateStatus,
-    PublishFeed,
+    UpdateStory,
     UploadImage,
-    UploadVideo
+    GetContacts,
+    GetFeeds
 };

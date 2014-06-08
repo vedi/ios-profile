@@ -7,14 +7,8 @@
 //
 
 #import "IAuthProvider.h"
+#import "SocialCallbacks.h"
 
-
-// Define block signatures
-
-typedef void (^socialActionSuccess)();
-typedef void (^socialActionFail)(NSString* message);
-typedef void (^contactsActionSuccess)(NSArray* userProfiles);
-typedef void (^contactsActionFail)(NSString* message);
 
 
 
@@ -22,15 +16,31 @@ typedef void (^contactsActionFail)(NSString* message);
 
 - (void)updateStatus:(NSString *)status success:(socialActionSuccess)success fail:(socialActionFail)fail;
 
-//- (void)updateStoryWithMessage:(NSString *)message
-//                       andName:(NSString *)name
-//                    andCaption:(NSString *)caption
-//                andDescription:(NSString *)description
-//                       andLink:(NSString *)link
-//                    andPicture:(NSString *)picture
-//                       success:(socialActionSuccess)success
-//                          fail:(socialActionFail)fail;
-//
-//- (void)getContacts:(contactsActionSuccess)success fail:(contactsActionFail)fail;
+- (void)updateStoryWithMessage:(NSString *)message
+                       andName:(NSString *)name
+                    andCaption:(NSString *)caption
+                andDescription:(NSString *)description
+                       andLink:(NSString *)link
+                    andPicture:(NSString *)picture
+                       success:(socialActionSuccess)success
+                          fail:(socialActionFail)fail;
+
+- (void)getContacts:(contactsActionSuccess)success fail:(contactsActionFail)fail;
+
+- (void)getFeeds:(feedsActionSuccess)success fail:(feedsActionFail)fail;
+
+- (void)uploadImageWithMessage:(NSString *)message
+                   andFilePath:(NSString *)filePath
+                       success:(socialActionSuccess)success
+                          fail:(socialActionFail)fail;
+
+- (void)uploadImageWithMessage:(NSString *)message
+                   andFileName:(NSString *)fileName
+                     andBitmap:()bitmap
+                andJpegQuality:(int)jpegQuality
+                       success:(socialActionSuccess)success
+                          fail:(socialActionFail)fail;
+
+
 
 @end

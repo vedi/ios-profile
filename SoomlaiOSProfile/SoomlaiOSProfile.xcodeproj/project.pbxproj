@@ -67,7 +67,7 @@
 		EF356EFD193C90560081DCE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EF356F01193C90560081DCE0 /* SoomlaiOSProfile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoomlaiOSProfile-Prefix.pch"; sourceTree = "<group>"; };
 		EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoomlaiOSProfile.h; sourceTree = "<group>"; };
-		EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SoomlaiOSProfile.m; path = SoomlaiOSProfile/SoomlaiOSProfile.m; sourceTree = "<group>"; };
+		EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoomlaiOSProfile.m; sourceTree = "<group>"; };
 		EF356F0A193C90560081DCE0 /* SoomlaiOSProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoomlaiOSProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF356F0B193C90560081DCE0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EF356F0E193C90560081DCE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -99,6 +99,7 @@
 		EFAE6BEA193DDB5D0077EF7F /* SocialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialController.h; sourceTree = "<group>"; };
 		EFAE6BEB193DDB5D0077EF7F /* SocialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialController.m; sourceTree = "<group>"; };
 		EFAE6BEE193DDFC20077EF7F /* SocialActionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialActionUtils.h; sourceTree = "<group>"; };
+		EFC2E6F019449A3A009BA5CF /* SocialCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialCallbacks.h; path = social/SocialCallbacks.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +132,6 @@
 				EF356F13193C90560081DCE0 /* SoomlaiOSProfileTests */,
 				EF356EFC193C90560081DCE0 /* Frameworks */,
 				EF356EFB193C90560081DCE0 /* Products */,
-				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,13 +157,14 @@
 		EF356EFF193C90560081DCE0 /* SoomlaiOSProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
+				EF356F04193C90560081DCE0 /* SoomlaiOSProfile.m */,
 				EF356F14193C90560081DCE0 /* Supporting Files */,
 				EFAE6BD8193DA3670077EF7F /* exceptions */,
 				EFAE6BD2193CD3D80077EF7F /* social */,
 				EFAE6BCF193CC7800077EF7F /* auth */,
 				EF356F29193CA50B0081DCE0 /* domain */,
 				EF356F24193CA1550081DCE0 /* data */,
-				EF356F02193C90560081DCE0 /* SoomlaiOSProfile.h */,
 				EF356F00193C90560081DCE0 /* Supporting Files */,
 				EF356F2E193CAD580081DCE0 /* UserProfileEventHandling.h */,
 				EF356F2F193CAD580081DCE0 /* UserProfileEventHandling.m */,
@@ -240,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAE6BD3193CD3F60077EF7F /* ISocialProvider.h */,
+				EFC2E6F019449A3A009BA5CF /* SocialCallbacks.h */,
 			);
 			name = social;
 			sourceTree = "<group>";
