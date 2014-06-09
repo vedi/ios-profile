@@ -31,12 +31,12 @@
                     andFilePath:(NSString *)filePath
                       andReward:(Reward *)reward;
 
-- (void)uploadImageWithProvider:(enum Provider)provider
-                     andMessage:(NSString *)message
-                    andFileName:(NSString *)fileName
-                      andBitmap:(Bitmap *)bitmap
-                 andJpegQuality:(int)jpegQuality
-                      andReward:(Reward *)reward;
+//- (void)uploadImageWithProvider:(enum Provider)provider
+//                     andMessage:(NSString *)message
+//                    andFileName:(NSString *)fileName
+//                      andBitmap:(Bitmap *)bitmap
+//                 andJpegQuality:(int)jpegQuality
+//                      andReward:(Reward *)reward;
 
 - (void)getContactsWith:(enum Provider)provider andReward:(Reward *)reward;
 

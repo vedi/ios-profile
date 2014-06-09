@@ -42,12 +42,12 @@
                      andPicture:(NSString *)picture
                       andReward:(Reward *)reward;
 
-- (void)uploadImageWithProvider:(enum Provider)provider
-                     andMessage:(NSString *)message
-                    andFileName:(NSString *)fileName
-       andAndroidGraphicsBitmap:(AndroidGraphicsBitmap *)bitmap
-                 andJpegQuality:(int)jpegQuality
-                      andReward:(Reward *)reward;
+//- (void)uploadImageWithProvider:(enum Provider)provider
+//                     andMessage:(NSString *)message
+//                    andFileName:(NSString *)fileName
+//       andAndroidGraphicsBitmap:(AndroidGraphicsBitmap *)bitmap
+//                 andJpegQuality:(int)jpegQuality
+//                      andReward:(Reward *)reward;
 
 - (void)uploadImageWithProvider:(enum Provider)provider
                    andMessage:(NSString *)message
