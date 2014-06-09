@@ -34,12 +34,12 @@
                        success:(socialActionSuccess)success
                           fail:(socialActionFail)fail;
 
-- (void)uploadImageWithMessage:(NSString *)message
-                   andFileName:(NSString *)fileName
-                     andBitmap:()bitmap
-                andJpegQuality:(int)jpegQuality
-                       success:(socialActionSuccess)success
-                          fail:(socialActionFail)fail;
+//- (void)uploadImageWithMessage:(NSString *)message
+//                   andFileName:(NSString *)fileName
+//                     andBitmap:()bitmap
+//                andJpegQuality:(int)jpegQuality
+//                       success:(socialActionSuccess)success
+//                          fail:(socialActionFail)fail;
 
 
 
