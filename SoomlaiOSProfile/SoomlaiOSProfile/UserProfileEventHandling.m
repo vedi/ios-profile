@@ -8,6 +8,8 @@
 
 #import "UserProfileEventHandling.h"
 #import "UserProfile.h"
+#import "BadgeReward.h"
+
 
 @implementation UserProfileEventHandling
 
@@ -87,6 +89,14 @@
                               message, DICT_ELEMENT_MESSAGE
                               , nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_FAILED object:self userInfo:userInfo];
+}
+
++ (void)postRewardGiven:(Reward *)reward {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                              reward, DICT_ELEMENT_REWARD,
+                              [reward isKindOfClass:[BadgeReward class]], DICT_ELEMENT_IS_BADGE,
+                              nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_BP_REWARD_GIVEN object:self userInfo:userInfo];
 }
 
 

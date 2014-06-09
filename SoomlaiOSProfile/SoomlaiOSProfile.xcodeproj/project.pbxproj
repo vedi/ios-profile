@@ -37,6 +37,20 @@
 		EFAE6BE9193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */; };
 		EFAE6BEC193DDB5D0077EF7F /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BEB193DDB5D0077EF7F /* SocialController.m */; };
 		EFAE6BED193DDB5D0077EF7F /* SocialController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFAE6BEB193DDB5D0077EF7F /* SocialController.m */; };
+		EFC2E6F61945B735009BA5CF /* BPJSONConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6F51945B735009BA5CF /* BPJSONConsts.m */; };
+		EFC2E6F71945B735009BA5CF /* BPJSONConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6F51945B735009BA5CF /* BPJSONConsts.m */; };
+		EFC2E6FA1945B8AD009BA5CF /* RewardStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6F91945B8AD009BA5CF /* RewardStorage.m */; };
+		EFC2E6FB1945B8AD009BA5CF /* RewardStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6F91945B8AD009BA5CF /* RewardStorage.m */; };
+		EFC2E7071945B8D7009BA5CF /* BadgeReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6FE1945B8D7009BA5CF /* BadgeReward.m */; };
+		EFC2E7081945B8D7009BA5CF /* RandomReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7001945B8D7009BA5CF /* RandomReward.m */; };
+		EFC2E7091945B8D7009BA5CF /* Reward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7021945B8D7009BA5CF /* Reward.m */; };
+		EFC2E70A1945B8D7009BA5CF /* SequenceReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7041945B8D7009BA5CF /* SequenceReward.m */; };
+		EFC2E70B1945B8D7009BA5CF /* VirtualItemReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7061945B8D7009BA5CF /* VirtualItemReward.m */; };
+		EFC2E70C1945BA40009BA5CF /* BadgeReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E6FE1945B8D7009BA5CF /* BadgeReward.m */; };
+		EFC2E70D1945BA50009BA5CF /* RandomReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7001945B8D7009BA5CF /* RandomReward.m */; };
+		EFC2E70E1945BA5A009BA5CF /* Reward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7021945B8D7009BA5CF /* Reward.m */; };
+		EFC2E70F1945BA5C009BA5CF /* SequenceReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7041945B8D7009BA5CF /* SequenceReward.m */; };
+		EFC2E7101945BA5E009BA5CF /* VirtualItemReward.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2E7061945B8D7009BA5CF /* VirtualItemReward.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +114,21 @@
 		EFAE6BEB193DDB5D0077EF7F /* SocialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialController.m; sourceTree = "<group>"; };
 		EFAE6BEE193DDFC20077EF7F /* SocialActionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialActionUtils.h; sourceTree = "<group>"; };
 		EFC2E6F019449A3A009BA5CF /* SocialCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialCallbacks.h; path = social/SocialCallbacks.h; sourceTree = "<group>"; };
+		EFC2E6F41945B735009BA5CF /* BPJSONConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPJSONConsts.h; path = data/BPJSONConsts.h; sourceTree = "<group>"; };
+		EFC2E6F51945B735009BA5CF /* BPJSONConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPJSONConsts.m; path = data/BPJSONConsts.m; sourceTree = "<group>"; };
+		EFC2E6F81945B8AD009BA5CF /* RewardStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RewardStorage.h; path = data/RewardStorage.h; sourceTree = "<group>"; };
+		EFC2E6F91945B8AD009BA5CF /* RewardStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RewardStorage.m; path = data/RewardStorage.m; sourceTree = "<group>"; };
+		EFC2E6FD1945B8D7009BA5CF /* BadgeReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeReward.h; sourceTree = "<group>"; };
+		EFC2E6FE1945B8D7009BA5CF /* BadgeReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeReward.m; sourceTree = "<group>"; };
+		EFC2E6FF1945B8D7009BA5CF /* RandomReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomReward.h; sourceTree = "<group>"; };
+		EFC2E7001945B8D7009BA5CF /* RandomReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomReward.m; sourceTree = "<group>"; };
+		EFC2E7011945B8D7009BA5CF /* Reward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reward.h; sourceTree = "<group>"; };
+		EFC2E7021945B8D7009BA5CF /* Reward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reward.m; sourceTree = "<group>"; };
+		EFC2E7031945B8D7009BA5CF /* SequenceReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceReward.h; sourceTree = "<group>"; };
+		EFC2E7041945B8D7009BA5CF /* SequenceReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceReward.m; sourceTree = "<group>"; };
+		EFC2E7051945B8D7009BA5CF /* VirtualItemReward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtualItemReward.h; sourceTree = "<group>"; };
+		EFC2E7061945B8D7009BA5CF /* VirtualItemReward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtualItemReward.m; sourceTree = "<group>"; };
+		EFC2E7111945BACF009BA5CF /* Blueprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blueprint.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +206,7 @@
 				EFAE6BEA193DDB5D0077EF7F /* SocialController.h */,
 				EFAE6BEB193DDB5D0077EF7F /* SocialController.m */,
 				EFAE6BEE193DDFC20077EF7F /* SocialActionUtils.h */,
+				EFC2E7111945BACF009BA5CF /* Blueprint.h */,
 			);
 			path = SoomlaiOSProfile;
 			sourceTree = "<group>";
@@ -211,10 +241,14 @@
 		EF356F24193CA1550081DCE0 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				EFC2E6F81945B8AD009BA5CF /* RewardStorage.h */,
+				EFC2E6F91945B8AD009BA5CF /* RewardStorage.m */,
 				EF356F25193CA1770081DCE0 /* PJSONConsts.h */,
 				EF356F26193CA1770081DCE0 /* PJSONConsts.m */,
 				EF356F37193CBEEB0081DCE0 /* UserProfileStorage.h */,
 				EF356F38193CBEEB0081DCE0 /* UserProfileStorage.m */,
+				EFC2E6F41945B735009BA5CF /* BPJSONConsts.h */,
+				EFC2E6F51945B735009BA5CF /* BPJSONConsts.m */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -222,6 +256,7 @@
 		EF356F29193CA50B0081DCE0 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				EFC2E6FC1945B8D7009BA5CF /* rewards */,
 				EF356F2A193CA52E0081DCE0 /* UserProfile.h */,
 				EF356F2B193CA52E0081DCE0 /* UserProfile.m */,
 				EF356F32193CB2060081DCE0 /* IProvider.h */,
@@ -255,6 +290,24 @@
 				EFAE6BE7193DC6310077EF7F /* UserProfileNotFoundException.m */,
 			);
 			name = exceptions;
+			sourceTree = "<group>";
+		};
+		EFC2E6FC1945B8D7009BA5CF /* rewards */ = {
+			isa = PBXGroup;
+			children = (
+				EFC2E6FD1945B8D7009BA5CF /* BadgeReward.h */,
+				EFC2E6FE1945B8D7009BA5CF /* BadgeReward.m */,
+				EFC2E6FF1945B8D7009BA5CF /* RandomReward.h */,
+				EFC2E7001945B8D7009BA5CF /* RandomReward.m */,
+				EFC2E7011945B8D7009BA5CF /* Reward.h */,
+				EFC2E7021945B8D7009BA5CF /* Reward.m */,
+				EFC2E7031945B8D7009BA5CF /* SequenceReward.h */,
+				EFC2E7041945B8D7009BA5CF /* SequenceReward.m */,
+				EFC2E7051945B8D7009BA5CF /* VirtualItemReward.h */,
+				EFC2E7061945B8D7009BA5CF /* VirtualItemReward.m */,
+			);
+			name = rewards;
+			path = domain/rewards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,14 +392,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC2E70C1945BA40009BA5CF /* BadgeReward.m in Sources */,
+				EFC2E70F1945BA5C009BA5CF /* SequenceReward.m in Sources */,
 				EFAE6BE4193DC2B50077EF7F /* AuthController.m in Sources */,
 				EFAE6BEC193DDB5D0077EF7F /* SocialController.m in Sources */,
 				EF356F39193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
+				EFC2E6F61945B735009BA5CF /* BPJSONConsts.m in Sources */,
 				EFAE6BD6193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F30193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F35193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
+				EFC2E70E1945BA5A009BA5CF /* Reward.m in Sources */,
 				EFAE6BE8193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */,
+				EFC2E7101945BA5E009BA5CF /* VirtualItemReward.m in Sources */,
 				EF356F27193CA1770081DCE0 /* PJSONConsts.m in Sources */,
+				EFC2E70D1945BA50009BA5CF /* RandomReward.m in Sources */,
+				EFC2E6FA1945B8AD009BA5CF /* RewardStorage.m in Sources */,
 				EFAE6BDB193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F05193C90560081DCE0 /* SoomlaProfile.m in Sources */,
 				EF356F2C193CA52E0081DCE0 /* UserProfile.m in Sources */,
@@ -357,14 +417,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC2E7071945B8D7009BA5CF /* BadgeReward.m in Sources */,
+				EFC2E70A1945B8D7009BA5CF /* SequenceReward.m in Sources */,
 				EFAE6BE5193DC2B50077EF7F /* AuthController.m in Sources */,
 				EFAE6BED193DDB5D0077EF7F /* SocialController.m in Sources */,
 				EF356F3A193CBEEB0081DCE0 /* UserProfileStorage.m in Sources */,
+				EFC2E6F71945B735009BA5CF /* BPJSONConsts.m in Sources */,
 				EFAE6BD7193CDEEE0077EF7F /* ProviderLoader.m in Sources */,
 				EF356F31193CAD580081DCE0 /* UserProfileEventHandling.m in Sources */,
 				EF356F36193CB6D60081DCE0 /* UserProfileUtils.m in Sources */,
+				EFC2E7091945B8D7009BA5CF /* Reward.m in Sources */,
 				EFAE6BE9193DC6310077EF7F /* UserProfileNotFoundException.m in Sources */,
+				EFC2E70B1945B8D7009BA5CF /* VirtualItemReward.m in Sources */,
 				EF356F28193CA1790081DCE0 /* PJSONConsts.m in Sources */,
+				EFC2E7081945B8D7009BA5CF /* RandomReward.m in Sources */,
+				EFC2E6FB1945B8AD009BA5CF /* RewardStorage.m in Sources */,
 				EFAE6BDC193DA38E0077EF7F /* ProviderNotFoundException.m in Sources */,
 				EF356F1A193C90560081DCE0 /* SoomlaiOSProfileTests.m in Sources */,
 				EF356F2D193CA52E0081DCE0 /* UserProfile.m in Sources */,
@@ -472,7 +539,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SOOMLA_HOME)/ios-levelup/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
 					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -490,7 +556,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SOOMLA_HOME)/ios-levelup/SoomlaiOSBlueprint/SoomlaiOSBlueprint/**",
 					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";

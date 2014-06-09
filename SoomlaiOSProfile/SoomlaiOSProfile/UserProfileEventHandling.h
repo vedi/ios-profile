@@ -10,6 +10,7 @@
 #import "SocialActionUtils.h"
 
 @class UserProfile;
+@class Reward;
 
 // Events
 #define EVENT_UP_USER_PROFILE_UPDATED           @"up_user_profile_updated"
@@ -31,12 +32,17 @@
 #define EVENT_UP_GET_CONTACTS_FINISHED          @"up_get_contacs_finished"
 #define EVENT_UP_GET_CONTACTS_FAILED            @"up_get_contacs_failed"
 
+#define EVENT_BP_REWARD_GIVEN                   @"bp_reward_given"
+
+
 // UserInfo Elements
 #define DICT_ELEMENT_USER_PROFILE               @"userProfile"
 #define DICT_ELEMENT_PROVIDER                   @"provider"
 #define DICT_ELEMENT_SOCIAL_ACTION_TYPE         @"socialActiontype"
 #define DICT_ELEMENT_MESSAGE                    @"message"
 #define DICT_ELEMENT_CONTACTS                   @"contacts"
+#define DICT_ELEMENT_REWARD                     @"reward"
+#define DICT_ELEMENT_IS_BADGE                   @"isBadge"
 
 
 @interface UserProfileEventHandling : NSObject
@@ -55,5 +61,6 @@
 + (void)postGetContactsStarted:(enum SocialActionType)socialActionType;
 + (void)postGetContactsFinished:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts;
 + (void)postGetContactsFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
++ (void)postRewardGiven:(Reward *)reward;
 
 @end
