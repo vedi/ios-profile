@@ -41,21 +41,24 @@ static NSString* TAG = @"SOOMLA AuthController";
     [UserProfileEventHandling postLoginStarted:provider];
     
     // Perform login process
-    [authProvider login:^(enum Provider provider) {
-        [authProvider getUserProfile: ^(UserProfile *userProfile) {
-            [UserProfileStorage setUserProfile:userProfile];
-            [UserProfileEventHandling postLoginFinished:userProfile];
-            
-            if (reward) {
-                [reward give];
-            }
+    // TODO: Check if need to change any nonatomic properties
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [authProvider login:^(enum Provider provider) {
+            [authProvider getUserProfile: ^(UserProfile *userProfile) {
+                [UserProfileStorage setUserProfile:userProfile];
+                [UserProfileEventHandling postLoginFinished:userProfile];
+                
+                if (reward) {
+                    [reward give];
+                }
+            } fail:^(NSString *message) {
+                [UserProfileEventHandling postLoginFailed:message];
+            }];
         } fail:^(NSString *message) {
             [UserProfileEventHandling postLoginFailed:message];
+        } cancel:^{
+            [UserProfileEventHandling postLoginCancelled];
         }];
-    } fail:^(NSString *message) {
-        [UserProfileEventHandling postLoginFailed:message];
-    } cancel:^{
-        [UserProfileEventHandling postLoginCancelled];
     }];
 }
 
