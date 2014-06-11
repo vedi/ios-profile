@@ -57,13 +57,13 @@
             self.profileId, UP_PROFILEID,
             self.username, UP_USERNAME,
             self.email, UP_EMAIL,
-            self.email, UP_FIRSTNAME,
-            self.email, UP_LANGUAGE,
-            self.email, UP_AVATAR,
-            self.email, UP_LOCATION,
-            self.email, UP_GENDER,
-            self.email, UP_LANGUAGE,
-            self.email, UP_BIRTHDAY,
+            self.firstName, UP_FIRSTNAME,
+            self.lastName, UP_LASTNAME,
+            self.avatarLink, UP_AVATAR,
+            self.location, UP_LOCATION,
+            self.gender, UP_GENDER,
+            self.language, UP_LANGUAGE,
+            self.birthday, UP_BIRTHDAY,
             nil];
 }
 
