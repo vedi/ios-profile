@@ -14,17 +14,17 @@
 @implementation UserProfileEventHandling
 
 + (void)postUserProfileUpdated:(UserProfile *)userProfile {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:userProfile forKey:DICT_ELEMENT_USER_PROFILE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_USER_PROFILE: userProfile};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_USER_PROFILE_UPDATED object:self userInfo:userInfo];
 }
 
 + (void)postLoginStarted:(enum Provider)provider {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(provider) forKey:DICT_ELEMENT_PROVIDER];
+    NSDictionary *userInfo = @{DICT_ELEMENT_PROVIDER: @(provider)};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGIN_STARTED object:self userInfo:userInfo];
 }
 
 + (void)postLoginFinished:(UserProfile *)userProfile {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:userProfile forKey:DICT_ELEMENT_USER_PROFILE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_USER_PROFILE: userProfile};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGIN_FINISHED object:self userInfo:userInfo];
 }
 
@@ -33,61 +33,52 @@
 }
 
 + (void)postLoginFailed:(NSString *)message {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:message forKey:DICT_ELEMENT_MESSAGE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_MESSAGE: message};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGIN_FINISHED object:self userInfo:userInfo];
 }
 
 + (void)postLogoutStarted:(enum Provider)provider {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(provider) forKey:DICT_ELEMENT_PROVIDER];
+    NSDictionary *userInfo = @{DICT_ELEMENT_PROVIDER: @(provider)};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGOUT_STARTED object:self userInfo:userInfo];
 }
 
 + (void)postLogoutFinished:(UserProfile *)userProfile {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:userProfile forKey:DICT_ELEMENT_USER_PROFILE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_USER_PROFILE: userProfile};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGOUT_FINISHED object:self userInfo:userInfo];
 }
 
 + (void)postLogoutFailed:(NSString *)message {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:message forKey:DICT_ELEMENT_MESSAGE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_MESSAGE: message};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_LOGOUT_FINISHED object:self userInfo:userInfo];
 }
 
 + (void)postSocialActionStarted:(enum SocialActionType)socialActionType {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(socialActionType) forKey:DICT_ELEMENT_SOCIAL_ACTION_TYPE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType)};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_SOCIAL_ACTION_STARTED object:self userInfo:userInfo];
 }
 
 + (void)postSocialActionFinished:(enum SocialActionType)socialActionType {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(socialActionType) forKey:DICT_ELEMENT_SOCIAL_ACTION_TYPE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType)};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_SOCIAL_ACTION_FINISHED object:self userInfo:userInfo];
 }
 
 + (void)postSocialActionFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @(socialActionType), DICT_ELEMENT_SOCIAL_ACTION_TYPE,
-                              message, DICT_ELEMENT_MESSAGE
-                              , nil];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType), DICT_ELEMENT_MESSAGE: message};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_SOCIAL_ACTION_FAILED object:self userInfo:userInfo];
 }
 
 + (void)postGetContactsStarted:(enum SocialActionType)socialActionType {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(socialActionType) forKey:DICT_ELEMENT_SOCIAL_ACTION_TYPE];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType)};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_STARTED object:self userInfo:userInfo];
 }
 
 + (void)postGetContactsFinished:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @(socialActionType), DICT_ELEMENT_SOCIAL_ACTION_TYPE,
-                              contacts, DICT_ELEMENT_CONTACTS
-                              , nil];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType), DICT_ELEMENT_CONTACTS: contacts};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_FINISHED object:self userInfo:userInfo];
 }
 
 + (void)postGetContactsFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @(socialActionType), DICT_ELEMENT_SOCIAL_ACTION_TYPE,
-                              message, DICT_ELEMENT_MESSAGE
-                              , nil];
+    NSDictionary *userInfo = @{DICT_ELEMENT_SOCIAL_ACTION_TYPE: @(socialActionType), DICT_ELEMENT_MESSAGE: message};
     [[NSNotificationCenter defaultCenter] postNotificationName:EVENT_UP_GET_CONTACTS_FAILED object:self userInfo:userInfo];
 }
 
