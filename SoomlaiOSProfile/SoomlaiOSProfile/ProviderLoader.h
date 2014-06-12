@@ -22,7 +22,7 @@
 
 - (id)init;
 
-- (BOOL)loadProvidersWithManifestKey:(NSString *)manifestKey andProviderPkgPrefix:(NSString *)providerPkgPrefix;
+- (BOOL)loadProvidersWithProtocol:(Protocol *)protocol;
 
 - (void)handleErrorResultWithMessage:(NSString *)message;
 

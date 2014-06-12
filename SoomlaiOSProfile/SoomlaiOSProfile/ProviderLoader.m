@@ -6,11 +6,15 @@
 //  Copyright (c) 2014 Soomla. All rights reserved.
 //
 
+#import <objc/runtime.h>
+
 #import "ProviderLoader.h"
 #import "ProviderNotFoundException.h"
 #import "UserProfileEventHandling.h"
 #import "EventHandling.h"
 #import "StoreUtils.h"
+#import "IAuthProvider.h"
+#import "ISocialProvider.h"
 
 
 @implementation ProviderLoader
@@ -29,10 +33,10 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     return self;
 }
 
-- (BOOL)loadProvidersWithManifestKey:(NSString *)manifestKey andProviderPkgPrefix:(NSString *)providerPkgPrefix {
+- (BOOL)loadProvidersWithProtocol:(Protocol *)protocol {
     
     // Fetch a list of provider classes
-    NSArray* providerClasses = [self tryFetchProvidersWithManifestKey:manifestKey andProviderPkgPrefix:providerPkgPrefix];
+    NSArray* providerClasses = [self tryFetchProvidersWithProtocol:protocol];
     if (!providerClasses || [providerClasses count] == 0) {
         return NO;
     }
@@ -74,33 +78,51 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
 
 
 
-- (NSArray *)tryFetchProvidersWithManifestKey:(NSString *)manifestKey
-                         andProviderPkgPrefix:(NSString *)providerPkgPrefix {
+- (NSArray *)tryFetchProvidersWithProtocol:(Protocol *)protocol {
     
-    // Get settings from .plist file
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Supporting Files/SoomlaiOSProfile-Info" ofType:@"plist"];
-    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSArray* providersArr = [self loadAllClassesConformingToProtocol:protocol];
     
-    if (!settings) {
-        LogDebug(TAG, ([NSString stringWithFormat:@"Failed to load provider from SoomlaiOSProfile-Info.plist. manifest key: %@", manifestKey]));
+    if (![providersArr count]) {
+        LogDebug(TAG, ([NSString stringWithFormat:@"Failed to load provider.  No classes conform to the protocols: %@", protocol]));
         return nil;
     }
     
-    NSArray* providerClassNames = settings[manifestKey];
-    if (![providerClassNames count]) {
-        LogDebug(TAG, ([NSString stringWithFormat:@"Failed to load provider from SoomlaiOSProfile-Info.plist. manifest key: %@", manifestKey]));
-        return nil;
-    }
-    
+    return providersArr;
+}
+
+- (NSArray *)loadAllClassesConformingToProtocol:(Protocol *)protocol {
     NSMutableArray* providersArr = [NSMutableArray array];
-    for (NSString* providerItem in providerClassNames) {
-        
-        // TODO: Check if the providerPkgPrefix can be omitted completely in iOS
-        // This is the original line of code:
-        // Class aClass = NSClassFromString([providerPkgPrefix stringByAppendingString:token]);
-        
-        Class aClass = NSClassFromString(providerItem);
-        [providersArr addObject:aClass];
+    
+    int numClasses;
+    Class *classes = NULL;
+    
+    classes = NULL;
+    numClasses = objc_getClassList(NULL, 0);
+    BOOL isSocialProvider = protocol == @protocol(ISocialProvider);
+    
+    if (numClasses > 0 )
+    {
+        classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+        numClasses = objc_getClassList(classes, numClasses);
+        for (int i = 0; i < numClasses; i++) {
+            Class nextClass = classes[i];
+            
+            // To make sure that only one type of provider (social or auth) is added each time
+            // this method is called, and given that social providers inherit from auth providers,
+            // we must check strict conformity or non-conformity.
+            if (isSocialProvider) {
+                if (class_conformsToProtocol(nextClass, protocol) &&
+                    class_conformsToProtocol(nextClass, @protocol(IAuthProvider))) {
+                    [providersArr addObject:NSClassFromString(NSStringFromClass(classes[i]))];
+                }
+            } else {
+                if (class_conformsToProtocol(nextClass, protocol) &&
+                    !class_conformsToProtocol(nextClass, @protocol(ISocialProvider))) {
+                    [providersArr addObject:NSClassFromString(NSStringFromClass(classes[i]))];
+                }
+            }
+        }
+        free(classes);
     }
     
     return providersArr;

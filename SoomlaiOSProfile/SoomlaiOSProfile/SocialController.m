@@ -12,6 +12,7 @@
 #import "SocialActionUtils.h"
 #import "Reward.h"
 #import "StoreUtils.h"
+#import "ISocialProvider.h"
 
 @implementation SocialController
 
@@ -19,13 +20,13 @@ static NSString* TAG = @"SOOMLA SocialController";
 
 
 - (id)init {
-    if (self = [super init]) {
+    if (self = [super initWithoutLoadingProviders]) {
         
         // TODO: Check if providerPkgPrefix can be omitted completely in iOS
-        if (![self loadProvidersWithManifestKey:@"com.soomla.social.provider" andProviderPkgPrefix:@"com.soomla.profile.social."]) {
+        if (![self loadProvidersWithProtocol:@protocol(ISocialProvider)]) {
             NSString* msg = @"You don't have a ISocialProvider service attached. \
-            Decide which ISocialProvider you want, add it to SoomlaiOSProfile-Info.plist \
-            and add its static libraries and headers to the target's search path.";
+            Decide which ISocialProvider you want, and add its static libraries \
+            and headers to the target's search path.";
             LogDebug(TAG, msg);
         }
     }

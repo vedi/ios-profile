@@ -13,6 +13,7 @@
 #import "UserProfileEventHandling.h"
 #import "IAuthProvider.h"
 #import "Reward.h"
+#import "IAuthProvider.h"
 #import "StoreUtils.h"
 
 @implementation AuthController
@@ -23,14 +24,20 @@ static NSString* TAG = @"SOOMLA AuthController";
     if (self = [super init]) {
 
         // TODO: Check if providerPkgPrefix can be omitted completely in iOS
-        if (![self loadProvidersWithManifestKey:@"com.soomla.auth.provider" andProviderPkgPrefix:@"com.soomla.profile.auth."]) {
+        if (![self loadProvidersWithProtocol:@protocol(IAuthProvider)]) {
             NSString* msg = @"You don't have a IAuthProvider service attached. \
-                            Decide which IAuthProvider you want, add it to SoomlaiOSProfile-Info.plist \
-                            and add its static libraries and headers to the target's search path.";
+                            Decide which IAuthProvider you want, and add its static libraries \
+                            and headers to the target's search path.";
             LogDebug(TAG, msg);
         }
     }
 
+    return self;
+}
+
+- (id)initWithoutLoadingProviders {
+    if (self = [super init]) {
+    }
     return self;
 }
 

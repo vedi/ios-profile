@@ -16,6 +16,12 @@
 
 - (id)init;
 
+/**
+ Auxilliary initializer for internal use by `SocialController`.
+ Do not call this method yourself!
+ */
+- (id)initWithoutLoadingProviders;
+
 - (void)loginWithProvider:(enum Provider)provider andReward:(Reward *)reward;
 
 - (void)logoutWithProvider:(enum Provider)provider;
