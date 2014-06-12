@@ -78,7 +78,7 @@ static NSString* TAG = @"SOOMLA AuthController";
         userProfile = [self getStoredUserProfileWithProvider:provider];
     }
     @catch (NSException *ex) {
-        NSLog(@"%@",[ex callStackSymbols]);
+        LogError(TAG, ([NSString stringWithFormat:@"%@", [ex callStackSymbols]]));
     }
     
     // Perform logout process
