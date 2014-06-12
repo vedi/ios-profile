@@ -62,6 +62,7 @@ static NSString* TAG = @"SOOMLA ViewController";
 
 - (void)loginStarted:(NSNotification*)notification {
     NSString* provider = [UserProfileUtils providerEnumToString:[notification.userInfo[DICT_ELEMENT_PROVIDER] intValue]];
+    LogDebug(TAG, ([NSString stringWithFormat:@"Login started with provider: %@", provider]));
 }
 
 - (void)loginFinished:(NSNotification*)notification {

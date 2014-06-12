@@ -17,6 +17,7 @@
 
 @synthesize loginSuccess, loginFail, loginCancel,
             logoutSuccess, logoutFail,
+            userProfileSuccess, userProfileFail,
             socialActionSuccess, socialActionFail,
             feedsActionSuccess, feedsActionFail;
 
@@ -52,39 +53,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
     }
 
 }
-
-
-// Show the user the logged-out UI
-- (void)userLoggedOut
-{
-    // Set the button title as "Log in with Facebook"
-//    UIButton *loginButton = [self.viewController loginButton];
-//    [loginButton setTitle:@"Log in with Facebook" forState:UIControlStateNormal];
-    
-    // Confirm logout message
-    [self showMessage:@"You're now logged out" withTitle:@""];
-}
-
-// Show the user the logged-in UI
-- (void)userLoggedIn
-{
-    // Set the button title as "Log out"
-//    UIButton *loginButton = self.viewController.loginButton;
-//    [loginButton setTitle:@"Log out" forState:UIControlStateNormal];
-    
-    // Welcome message
-    [self showMessage:@"You're now logged in" withTitle:@"Welcome!"];
-    
-}
-
-// Show an alert message
-- (void)showMessage:(NSString *)text withTitle:(NSString *)title
-{
-    LogDebug(TAG, ([NSString stringWithFormat:@"--- %@:   %@", title, text]));
-}
-
-
-
 
 
 
@@ -331,14 +299,9 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
     if (!error && state == FBSessionStateOpen){
         LogDebug(TAG, @"Session opened");
         
-        
         // Callback
         self.loginSuccess(FACEBOOK);
         [self clearLoginBlocks];
-        
-        
-        // Show the user the logged-in UI
-        //        [self userLoggedIn];
         return;
     }
     if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
@@ -355,8 +318,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
         
         // If the session is closed
         LogDebug(TAG, @"Session closed");
-        // Show the user the logged-out UI
-        //        [self userLoggedOut];
     }
     
     // Handle errors
@@ -373,9 +334,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
             // Callback
             self.loginFail([NSString stringWithFormat:@"%@: %@", alertTitle, alertText]);
             [self clearLoginBlocks];
-            
-            // Show message
-            //            [self showMessage:alertText withTitle:alertTitle];
         } else {
             
             // If the user cancelled login, do nothing
@@ -395,9 +353,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                 self.loginFail([NSString stringWithFormat:@"%@: %@", alertTitle, alertText]);
                 [self clearLoginBlocks];
                 
-                // Show message
-                //                [self showMessage:alertText withTitle:alertTitle];
-                
                 // For simplicity, here we just show a generic message for all other errors
                 // You can learn how to handle other errors using our guide: https://developers.facebook.com/docs/ios/errors
             } else {
@@ -411,16 +366,11 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                 // Callback
                 self.loginFail([NSString stringWithFormat:@"%@: %@", alertTitle, alertText]);
                 [self clearLoginBlocks];
-                
-                // Show message
-                //                [self showMessage:alertText withTitle:alertTitle];
             }
         }
         
         // Clear this token
         [FBSession.activeSession closeAndClearTokenInformation];
-        // Show the user the logged-out UI
-        //        [self userLoggedOut];
     }
 }
 

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-#import "ViewController.h"
 
 @class VirtualItemReward;
 
@@ -21,12 +20,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-//@property (strong, nonatomic) ViewController *viewController;
 @property (strong, nonatomic) VirtualItemReward* loginReward;
 @property (strong, nonatomic) VirtualItemReward* updateStatusReward;
-
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
-- (void)userLoggedIn;
-- (void)userLoggedOut;
 
 @end

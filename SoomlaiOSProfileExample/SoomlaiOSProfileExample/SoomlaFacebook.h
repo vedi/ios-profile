@@ -35,4 +35,7 @@
 @property (strong, nonatomic) feedsActionSuccess feedsActionSuccess;
 @property (strong, nonatomic) feedsActionFail feedsActionFail;
 
+// Make this method public to allow access from App Delegate
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
+
 @end
