@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileUtils.h"
+#import "IProvider.h"
 
 @class UserProfile;
 
@@ -22,7 +23,7 @@ typedef void (^logoutSuccess)();
 typedef void (^logoutFail)(NSString* message);
 
 
-@protocol IAuthProvider <NSObject>
+@protocol IAuthProvider <IProvider>
 
 - (void)login:(loginSuccess)success fail:(loginFail)fail cancel:(loginCancel)cancel;
 
