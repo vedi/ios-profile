@@ -42,6 +42,17 @@
                                     <action selector="shareStatusButtontouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MET-m2-EIa"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8R-pg-dNx">
+                                <rect key="frame" x="22" y="202" width="276" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Update Story">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateStoryButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hE8-NB-Tdn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -49,6 +60,7 @@
                         <outlet property="currencyLabel" destination="GAZ-80-JOd" id="xgm-ZM-8g7"/>
                         <outlet property="loginButton" destination="ZAl-Gb-aro" id="ilG-uI-3eg"/>
                         <outlet property="updateStatusButton" destination="ZxG-bj-FbG" id="LUz-cQ-ict"/>
+                        <outlet property="updateStoryButton" destination="k8R-pg-dNx" id="Jog-5O-VXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

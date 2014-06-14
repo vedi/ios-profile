@@ -29,6 +29,7 @@ static NSString* TAG = @"SOOMLA ViewController";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFinished:) name:EVENT_UP_LOGIN_FINISHED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed:) name:EVENT_UP_LOGIN_FAILED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginCancelled:) name:EVENT_UP_LOGIN_CANCELLED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutFinished:) name:EVENT_UP_LOGOUT_FINISHED object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currencyBalanceChanged:) name:EVENT_CURRENCY_BALANCE_CHANGED object:nil];
 }
 
@@ -57,7 +58,15 @@ static NSString* TAG = @"SOOMLA ViewController";
     // Retrieve the app delegate
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
 
-    [[SoomlaProfile getInstance] updateStatusWithProvider:FACEBOOK andStatus:@"Test status" andReward:appDelegate.updateStatusReward];
+    [[SoomlaProfile getInstance] updateStatusWithProvider:FACEBOOK andStatus:nil andReward:appDelegate.updateStatusReward];
+}
+
+- (IBAction)updateStoryButtonTouched:(id)sender {
+
+    // Retrieve the app delegate
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    
+    [[SoomlaProfile getInstance] updateStoryWithProvider:FACEBOOK andMessage:nil andName:nil andCaption:nil andDescription:nil andLink:nil andPicture:nil andReward:appDelegate.updateStatusReward];
 }
 
 - (void)loginStarted:(NSNotification*)notification {
@@ -69,25 +78,28 @@ static NSString* TAG = @"SOOMLA ViewController";
     // TODO: extract user profile object from notification
     // NSDictionary* userInfo = notification.userInfo;
     
-    [self showMessage:@"You are now logged in to Facebook" withTitle:@"Login Success"];
+    LogDebug(TAG, @"Login Success: you are now logged in to Facebook");
+    [self.loginButton setTitle:@"Logout" forState:UIControlStateNormal];
     [self.updateStatusButton setHidden:NO];
+    [self.updateStoryButton setHidden:NO];
 }
 
 - (void)loginFailed:(NSNotification*)notification {
-    [self showMessage:notification.userInfo[DICT_ELEMENT_MESSAGE] withTitle:@"Login Failed"];
+    LogError(TAG, ([NSString stringWithFormat:@"Login Failed: %@", notification.userInfo[DICT_ELEMENT_MESSAGE]]));
     [self.updateStatusButton setHidden:YES];
+    [self.updateStoryButton setHidden:YES];
 }
 
 - (void)loginCancelled:(NSNotification*)notification {
-    [self showMessage:@"You cancelled the login process" withTitle:@"Login Cancelled"];
+    LogDebug(TAG, @"Login Cancelled: you cancelled the login process");
     [self.updateStatusButton setHidden:YES];
+    [self.updateStoryButton setHidden:YES];
 }
 
-
-// Show an alert message
-- (void)showMessage:(NSString *)text withTitle:(NSString *)title
-{
-    LogDebug(TAG, ([NSString stringWithFormat:@"%@: %@", title, text]));
+- (void)logoutFinished:(NSNotification*)notification {
+    [self.loginButton setTitle:@"Login with Facebook to earn 100 coins" forState:UIControlStateNormal];
+    [self.updateStatusButton setHidden:YES];
+    [self.updateStoryButton setHidden:YES];
 }
 
 - (void)currencyBalanceChanged:(NSNotification *)notification {

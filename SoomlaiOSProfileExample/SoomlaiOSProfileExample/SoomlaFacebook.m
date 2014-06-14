@@ -55,18 +55,12 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
 }
 
 
-
-
-
-
-
 /*
- This function asks for the user's public profile and birthday.
- It first checks for the existence of the public_profile and user_birthday permissions
- If the permissions are not present, it requests them
- If/once the permissions are present, it makes the user info request
+ Asks for the user's public profile and birthday.
+ First checks for the existence of the `public_profile` and `user_birthday` permissions
+ If the permissions are not present, requests them
+ If/once the permissions are present, makes the user info request
  */
-
 - (void)getUserProfile:(userProfileSuccess)success fail:(userProfileFail)fail {
     LogDebug(TAG, @"Getting user profile");
     self.userProfileSuccess = success;
@@ -121,23 +115,7 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                                   LogError(TAG, error.description);
                               }
                           }];
-    
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (void)logout:(logoutSuccess)success fail:(logoutFail)fail {
@@ -150,7 +128,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
 }
 
 - (void)updateStatus:(NSString *)status success:(socialActionSuccess)success fail:(socialActionFail)fail {
-    NSLog(@"============================ updateStatus ============================");
     LogDebug(TAG, @"Updating status");
     
     self.socialActionSuccess = success;
@@ -196,7 +173,7 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                                        nil];
         
         // Show the feed dialog
-        // In order to post a link, change the second parameter to `parameters`
+        // In order to post a link, change the second parameter to `params`
         [FBWebDialogs presentFeedDialogModallyWithSession:nil
                                                parameters:nil
                                                   handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
@@ -244,7 +221,7 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                     andPicture:(NSString *)picture
                        success:(socialActionSuccess)success
                           fail:(socialActionFail)fail {
-    NSLog(@"============================ updateStoryWithMessage ============================");
+    @throw [NSException exceptionWithName:@"NotImplementedException" reason:@"Error, method not implemented yet." userInfo:nil];
 }
 
 - (void)getContacts:(contactsActionSuccess)success fail:(contactsActionFail)fail {
@@ -283,13 +260,14 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
                    andFilePath:(NSString *)filePath
                        success:(socialActionSuccess)success
                           fail:(socialActionFail)fail {
-    NSLog(@"============================ uploadImageWithMessage ============================");
+    @throw [NSException exceptionWithName:@"NotImplementedException" reason:@"Error, method not implemented yet." userInfo:nil];
 }
 
 
 
-
-
+//
+// Private Methods
+//
 
 
 // This method will handle ALL the session state changes in the app
@@ -374,7 +352,9 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
     }
 }
 
-
+/**
+ A helper method for requesting user data from Facebook.
+ */
 - (void) makeRequestForUserData {
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
@@ -393,10 +373,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
             userProfile.location = result[@"location"][@"name"];
             userProfile.avatarLink = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", result[@"id"]];
             
-            // TODO: Ask Refael:
-            // username == full name? That's how it's in SocialAuth
-            // language == locale?
-            
             self.userProfileSuccess(userProfile);
             [self clearUserProfileBlocks];
         } else {
@@ -410,7 +386,9 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
 }
 
 
-// A function for parsing URL parameters returned by the Feed Dialog.
+/**
+ A function for parsing URL parameters returned by the Feed Dialog.
+ */
 - (NSDictionary*)parseURLParams:(NSString *)query {
     NSArray *pairs = [query componentsSeparatedByString:@"&"];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -422,6 +400,10 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
     }
     return params;
 }
+
+/*
+ Helper methods for clearing callback blocks
+ */
 
 - (void)clearLoginBlocks {
     self.loginSuccess = nil;
@@ -443,8 +425,6 @@ static NSString* TAG = @"SOOMLA SoomlaFacebook";
     self.feedsActionSuccess = nil;
     self.feedsActionFail = nil;
 }
-
-
 
 
 @end
