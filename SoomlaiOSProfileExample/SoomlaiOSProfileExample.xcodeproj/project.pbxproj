@@ -23,13 +23,13 @@
 		EF8361BC19472A23003526D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF8361BA19472A23003526D7 /* InfoPlist.strings */; };
 		EF8361BE19472A23003526D7 /* SoomlaiOSProfileExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8361BD19472A23003526D7 /* SoomlaiOSProfileExampleTests.m */; };
 		EF8361DC19473010003526D7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361DB19473010003526D7 /* FacebookSDK.framework */; };
-		EF8361EA19473D09003526D7 /* libSoomlaiOSProfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361D619472A50003526D7 /* libSoomlaiOSProfile.a */; };
-		EF8361EB19473D09003526D7 /* libSoomlaiOSStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361E719473C8A003526D7 /* libSoomlaiOSStore.a */; };
 		EF8361EF19473D52003526D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361EE19473D52003526D7 /* Security.framework */; };
 		EF8361F119473D57003526D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361F019473D57003526D7 /* StoreKit.framework */; };
 		EF8361F319473D68003526D7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361F219473D68003526D7 /* libsqlite3.0.dylib */; };
 		EF8361F7194745BC003526D7 /* SoomlaFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8361F6194745BC003526D7 /* SoomlaFacebook.m */; };
 		EFC127791948B09000CDA66B /* MuffinRushAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC127781948B09000CDA66B /* MuffinRushAssets.m */; };
+		EFC127C1194C2F6300CDA66B /* libSoomlaiOSStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361E719473C8A003526D7 /* libSoomlaiOSStore.a */; };
+		EFC127C4194C303300CDA66B /* libSoomlaiOSProfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8361D619472A50003526D7 /* libSoomlaiOSProfile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +54,6 @@
 			remoteGlobalIDString = EF356F0A193C90560081DCE0;
 			remoteInfo = SoomlaiOSProfileTests;
 		};
-		EF8361D919472A89003526D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EF8361D019472A50003526D7 /* SoomlaiOSProfile.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EF356EF9193C90560081DCE0;
-			remoteInfo = SoomlaiOSProfile;
-		};
 		EF8361E619473C8A003526D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF8361E219473C8A003526D7 /* SoomlaiOSStore.xcodeproj */;
@@ -68,12 +61,19 @@
 			remoteGlobalIDString = C02CEC42160DC870000AA0D2;
 			remoteInfo = SoomlaiOSStore;
 		};
-		EF8361E819473CB4003526D7 /* PBXContainerItemProxy */ = {
+		EFC127BF194C2F5D00CDA66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF8361E219473C8A003526D7 /* SoomlaiOSStore.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C02CEC41160DC870000AA0D2;
 			remoteInfo = SoomlaiOSStore;
+		};
+		EFC127C2194C302D00CDA66B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF8361D019472A50003526D7 /* SoomlaiOSProfile.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EF356EF9193C90560081DCE0;
+			remoteInfo = SoomlaiOSProfile;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -115,11 +115,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC127C1194C2F6300CDA66B /* libSoomlaiOSStore.a in Frameworks */,
+				EFC127C4194C303300CDA66B /* libSoomlaiOSProfile.a in Frameworks */,
 				EF8361F319473D68003526D7 /* libsqlite3.0.dylib in Frameworks */,
 				EF8361F119473D57003526D7 /* StoreKit.framework in Frameworks */,
 				EF8361EF19473D52003526D7 /* Security.framework in Frameworks */,
-				EF8361EA19473D09003526D7 /* libSoomlaiOSProfile.a in Frameworks */,
-				EF8361EB19473D09003526D7 /* libSoomlaiOSStore.a in Frameworks */,
 				EF83619219472A23003526D7 /* CoreGraphics.framework in Frameworks */,
 				EF8361DC19473010003526D7 /* FacebookSDK.framework in Frameworks */,
 				EF83619419472A23003526D7 /* UIKit.framework in Frameworks */,
@@ -255,8 +255,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				EF8361E919473CB4003526D7 /* PBXTargetDependency */,
-				EF8361DA19472A89003526D7 /* PBXTargetDependency */,
+				EFC127C0194C2F5D00CDA66B /* PBXTargetDependency */,
+				EFC127C3194C302D00CDA66B /* PBXTargetDependency */,
 			);
 			name = SoomlaiOSProfileExample;
 			productName = SoomlaiOSProfileExample;
@@ -399,15 +399,15 @@
 			target = EF83618B19472A23003526D7 /* SoomlaiOSProfileExample */;
 			targetProxy = EF8361B519472A23003526D7 /* PBXContainerItemProxy */;
 		};
-		EF8361DA19472A89003526D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SoomlaiOSProfile;
-			targetProxy = EF8361D919472A89003526D7 /* PBXContainerItemProxy */;
-		};
-		EF8361E919473CB4003526D7 /* PBXTargetDependency */ = {
+		EFC127C0194C2F5D00CDA66B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SoomlaiOSStore;
-			targetProxy = EF8361E819473CB4003526D7 /* PBXContainerItemProxy */;
+			targetProxy = EFC127BF194C2F5D00CDA66B /* PBXContainerItemProxy */;
+		};
+		EFC127C3194C302D00CDA66B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SoomlaiOSProfile;
+			targetProxy = EFC127C2194C302D00CDA66B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -539,6 +539,7 @@
 					"$(SOOMLA_HOME)/ios-profile/SoomlaiOSProfile/**",
 				);
 				INFOPLIST_FILE = "SoomlaiOSProfileExample/SoomlaiOSProfileExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -567,6 +568,7 @@
 					"$(SOOMLA_HOME)/ios-profile/SoomlaiOSProfile/**",
 				);
 				INFOPLIST_FILE = "SoomlaiOSProfileExample/SoomlaiOSProfileExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
