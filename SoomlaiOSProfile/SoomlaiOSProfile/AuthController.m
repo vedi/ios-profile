@@ -29,6 +29,8 @@ static NSString* TAG = @"SOOMLA AuthController";
                             Decide which IAuthProvider you want, and add its static libraries \
                             and headers to the target's search path.";
             LogDebug(TAG, msg);
+        } else {
+            
         }
     }
 

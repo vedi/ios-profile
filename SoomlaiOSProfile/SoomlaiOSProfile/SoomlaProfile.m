@@ -15,7 +15,7 @@
 @implementation SoomlaProfile
 
 
-- (void)initialize {
+- (void)init {
     authController = [[AuthController alloc] init];
     socialController = [[SocialController alloc] init];
 }
