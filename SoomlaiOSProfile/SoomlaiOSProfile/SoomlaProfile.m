@@ -15,9 +15,13 @@
 @implementation SoomlaProfile
 
 
-- (void)init {
-    authController = [[AuthController alloc] init];
-    socialController = [[SocialController alloc] init];
+- (id)init {
+    if (self = [super init]) {
+        authController = [[AuthController alloc] init];
+        socialController = [[SocialController alloc] init];
+    }
+    
+    return self;
 }
 
 - (void)loginWithProvider:(enum Provider)provider {
