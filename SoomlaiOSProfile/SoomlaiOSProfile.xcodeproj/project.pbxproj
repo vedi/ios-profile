@@ -494,7 +494,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SOOMLA_HOME = "$(SRCROOT)/../..";
 			};
 			name = Debug;
 		};
@@ -525,7 +524,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
-				SOOMLA_HOME = "$(SRCROOT)/../..";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -540,7 +538,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../submodules/soomla-ios-core/SoomlaiOSCore/**",
-					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
+					"$(SRCROOT)/../../ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,7 +556,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../submodules/soomla-ios-core/SoomlaiOSCore/**",
-					"$(SOOMLA_HOME)/ios-store/SoomlaiOSStore/**",
+					"$(SRCROOT)/../../ios-store/SoomlaiOSStore/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
