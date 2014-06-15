@@ -17,9 +17,9 @@
 #import "VirtualItemReward.h"
 #import "VirtualItem.h"
 #import "StoreInventory.h"
-#import "BPJSONConsts.h"
+#import "JSONConsts.h"
 #import "VirtualItemNotFoundException.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 
 @implementation VirtualItemReward
 
