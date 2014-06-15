@@ -21,7 +21,7 @@
 }
 
 
-- (void)initialize;
+- (id)init;
 
 - (void)loginWithProvider:(enum Provider)provider;
 
