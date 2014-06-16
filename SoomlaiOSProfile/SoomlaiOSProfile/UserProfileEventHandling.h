@@ -47,6 +47,8 @@
 
 @interface UserProfileEventHandling : NSObject
 
++ (void)observeAllEventsWithObserver:(id)observer withSelector:(SEL)selector;
+
 + (void)postUserProfileUpdated:(UserProfile *)userProfile;
 + (void)postLoginStarted:(enum Provider)provider;
 + (void)postLoginFinished:(UserProfile *)userProfile;
