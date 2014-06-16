@@ -14,7 +14,7 @@
     NSString* reason = [NSString stringWithFormat:@"Provider not found when search with '%@'", [UserProfileUtils providerEnumToString:provider]];
     NSDictionary* userInfo = @{@"provider" : @(provider)};
 
-    self = [super initWithName:@"VirtualItemNotFoundException" reason:reason userInfo:userInfo];
+    self = [super initWithName:@"ProviderNotFoundException" reason:reason userInfo:userInfo];
     if (self){
         
     }
