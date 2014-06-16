@@ -27,7 +27,7 @@ static NSString* TAG = @"SOOMLA AppDelegate";
     
     id<IStoreAssets> storeAssets = [[MuffinRushAssets alloc] init];
     [[StoreController getInstance] initializeWithStoreAssets:storeAssets andCustomSecret:@"LukeSkywalker"];
-    [[SoomlaProfile getInstance] initialize];
+    [SoomlaProfile getInstance];
 
     self.loginReward = [[VirtualItemReward alloc] initWithRewardId:@"login_reward" andName:@"Login Reward" andAmount:100 andAssociatedItemId:MUFFINS_CURRENCY_ITEM_ID];
     self.updateStatusReward = [[VirtualItemReward alloc] initWithRewardId:@"update_status_reward" andName:@"Update Status Reward" andAmount:150 andAssociatedItemId:MUFFINS_CURRENCY_ITEM_ID];
