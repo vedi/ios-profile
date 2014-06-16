@@ -9,7 +9,6 @@
 #import "UserProfileStorage.h"
 #import "UserProfile.h"
 #import "UserProfileEventHandling.h"
-#import "StorageManager.h"
 #import "KeyValueStorage.h"
 #import "SoomlaUtils.h"
 
@@ -27,7 +26,7 @@ static NSString* TAG            = @"SOOMLA UserProfileStorage";
 
     NSString* value = [SoomlaUtils dictToJsonString:[userProfile toDictionary]];
     NSString* key = [self keyUserProfile:userProfile.provider];
-    [[[StorageManager getInstance] keyValueStorage] setValue:value forKey:key];
+    [KeyValueStorage setValue:value forKey:key];
     if (notify) {
         [UserProfileEventHandling postUserProfileUpdated:userProfile];
     }
