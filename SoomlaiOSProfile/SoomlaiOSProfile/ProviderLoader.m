@@ -11,7 +11,6 @@
 #import "ProviderLoader.h"
 #import "ProviderNotFoundException.h"
 #import "UserProfileEventHandling.h"
-#import "EventHandling.h"
 #import "SoomlaUtils.h"
 #import "IAuthProvider.h"
 #import "ISocialProvider.h"
@@ -57,15 +56,6 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     return YES;
 }
 
-- (void)handleErrorResultWithMessage:(NSString *)message {
-    [EventHandling postUnexpectedError:ERR_GENERAL forObject:self];
-    LogError(TAG, ([NSString stringWithFormat:@"ERROR: %@", message]));
-             
-    // TODO: Ask Refael:
-    // Java implementation of this event is different than ObjC
-    // BusProvider.getInstance().post(new UnexpectedStoreErrorEvent(message));
-}
-
 - (id<IProvider>)getProvider:(enum Provider)provider {
     id<IProvider> p = [self.providers objectForKey:@(provider)];
     if (!p) {
@@ -74,9 +64,6 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     
     return p;
 }
-
-
-
 
 - (NSArray *)tryFetchProvidersWithProtocol:(Protocol *)protocol {
     

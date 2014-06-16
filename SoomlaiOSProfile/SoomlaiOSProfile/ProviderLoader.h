@@ -24,8 +24,6 @@
 
 - (BOOL)loadProvidersWithProtocol:(Protocol *)protocol;
 
-- (void)handleErrorResultWithMessage:(NSString *)message;
-
 - (id<IProvider>)getProvider:(enum Provider)provider;
 
 
