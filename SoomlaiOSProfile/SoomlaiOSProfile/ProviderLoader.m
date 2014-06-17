@@ -11,7 +11,8 @@
 #import "ProviderLoader.h"
 #import "ProviderNotFoundException.h"
 #import "UserProfileEventHandling.h"
-#import "SoomlaUtils.h"
+#import "EventHandling.h"
+#import "StoreUtils.h"
 #import "IAuthProvider.h"
 #import "ISocialProvider.h"
 
@@ -33,15 +34,15 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
 }
 
 - (BOOL)loadProvidersWithProtocol:(Protocol *)protocol {
-    
+
     // Fetch a list of provider classes
     NSArray* providerClasses = [self tryFetchProvidersWithProtocol:protocol];
     if (!providerClasses || [providerClasses count] == 0) {
         return NO;
     }
-    
+
     self.providers = [NSMutableDictionary dictionary];
-    
+
     // Instantiate each provider class with reflection
     for (Class klass in providerClasses) {
         @try {
@@ -52,7 +53,7 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
             LogError(TAG, @"Couldn't instantiate provider class. Something's totally wrong here.");
         }
     }
-    
+
     return YES;
 }
 
@@ -61,39 +62,39 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
     if (!p) {
         @throw [[ProviderNotFoundException alloc] initWithProvider:provider];
     }
-    
+
     return p;
 }
 
 - (NSArray *)tryFetchProvidersWithProtocol:(Protocol *)protocol {
-    
+
     NSArray* providersArr = [self loadAllClassesConformingToProtocol:protocol];
-    
+
     if (![providersArr count]) {
         LogDebug(TAG, ([NSString stringWithFormat:@"Failed to load provider.  No classes conform to the protocols: %@", protocol]));
         return nil;
     }
-    
+
     return providersArr;
 }
 
 - (NSArray *)loadAllClassesConformingToProtocol:(Protocol *)protocol {
     NSMutableArray* providersArr = [NSMutableArray array];
-    
+
     int numClasses;
     Class *classes = NULL;
-    
+
     classes = NULL;
     numClasses = objc_getClassList(NULL, 0);
     BOOL isSocialProvider = protocol == @protocol(ISocialProvider);
-    
+
     if (numClasses > 0 )
     {
         classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
         numClasses = objc_getClassList(classes, numClasses);
         for (int i = 0; i < numClasses; i++) {
             Class nextClass = classes[i];
-            
+
             // To make sure that only one type of provider (social or auth) is added each time
             // this method is called, and given that social providers inherit from auth providers,
             // we must check strict conformity or non-conformity.
@@ -111,7 +112,7 @@ static NSString* TAG = @"SOOMLA ProviderLoader";
         }
         free(classes);
     }
-    
+
     return providersArr;
 }
 
