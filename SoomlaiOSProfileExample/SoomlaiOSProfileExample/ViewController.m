@@ -14,6 +14,7 @@
 #import "UserProfileEventHandling.h"
 #import "StoreEventHandling.h"
 #import "SoomlaUtils.h"
+#import "VirtualItemReward.h" // to avoid "incompatible type" warnings
 
 
 @implementation ViewController
