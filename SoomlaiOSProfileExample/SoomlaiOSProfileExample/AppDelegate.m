@@ -25,9 +25,8 @@ static NSString* TAG = @"SOOMLA AppDelegate";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    id<IStoreAssets> storeAssets = [[MuffinRushAssets alloc] init];
     [Soomla initializeWithSecret:@"LukeSkywalker"];
+    id<IStoreAssets> storeAssets = [[MuffinRushAssets alloc] init];
     [[SoomlaStore getInstance] initializeWithStoreAssets:storeAssets];
     [SoomlaProfile getInstance];
 
