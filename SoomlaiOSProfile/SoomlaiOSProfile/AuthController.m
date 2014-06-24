@@ -14,7 +14,7 @@
 #import "IAuthProvider.h"
 #import "Reward.h"
 #import "IAuthProvider.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 
 @implementation AuthController
 

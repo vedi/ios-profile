@@ -9,11 +9,12 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 #import "AppDelegate.h"
+#import "Soomla.h"
 #import "MuffinRushAssets.h"
-#import "StoreController.h"
+#import "SoomlaStore.h"
 #import "SoomlaProfile.h"
 #import "VirtualItemReward.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -26,7 +27,8 @@ static NSString* TAG = @"SOOMLA AppDelegate";
 {
     
     id<IStoreAssets> storeAssets = [[MuffinRushAssets alloc] init];
-    [[StoreController getInstance] initializeWithStoreAssets:storeAssets andCustomSecret:@"LukeSkywalker"];
+    [Soomla initializeWithSecret:@"LukeSkywalker"];
+    [[SoomlaStore getInstance] initializeWithStoreAssets:storeAssets];
     [SoomlaProfile getInstance];
 
     self.loginReward = [[VirtualItemReward alloc] initWithRewardId:@"login_reward" andName:@"Login Reward" andAmount:100 andAssociatedItemId:MUFFINS_CURRENCY_ITEM_ID];

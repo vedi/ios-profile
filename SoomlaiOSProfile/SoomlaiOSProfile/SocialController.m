@@ -11,7 +11,7 @@
 #import "UserProfileEventHandling.h"
 #import "SocialActionUtils.h"
 #import "Reward.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 #import "ISocialProvider.h"
 
 @implementation SocialController

@@ -11,7 +11,7 @@
 #import "SoomlaFacebook.h"
 #import "UserProfile.h"
 #import "UserProfileUtils.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 
 @implementation SoomlaFacebook
 

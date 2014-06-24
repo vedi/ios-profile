@@ -9,9 +9,8 @@
 #import "UserProfileStorage.h"
 #import "UserProfile.h"
 #import "UserProfileEventHandling.h"
-#import "StorageManager.h"
 #import "KeyValueStorage.h"
-#import "StoreUtils.h"
+#import "SoomlaUtils.h"
 
 @implementation UserProfileStorage
 
@@ -25,9 +24,9 @@ static NSString* TAG            = @"SOOMLA UserProfileStorage";
 
 + (void)setUserProfile:(UserProfile *)userProfile andNotify:(BOOL)notify {
 
-    NSString* value = [StoreUtils dictToJsonString:[userProfile toDictionary]];
+    NSString* value = [SoomlaUtils dictToJsonString:[userProfile toDictionary]];
     NSString* key = [self keyUserProfile:userProfile.provider];
-    [[[StorageManager getInstance] keyValueStorage] setValue:value forKey:key];
+    [KeyValueStorage setValue:value forKey:key];
     if (notify) {
         [UserProfileEventHandling postUserProfileUpdated:userProfile];
     }
@@ -35,19 +34,19 @@ static NSString* TAG            = @"SOOMLA UserProfileStorage";
 
 + (void)removeUserProfile:(UserProfile *)userProfile {
     NSString* key = [self keyUserProfile:userProfile.provider];
-    [[[StorageManager getInstance] keyValueStorage] deleteValueForKey:key];
+    [KeyValueStorage deleteValueForKey:key];
 }
 
 + (UserProfile *)getUserProfile:(enum Provider)provider {
     
     NSString* key = [self keyUserProfile:provider];
-    NSString* userProfileJSON = [[[StorageManager getInstance] keyValueStorage] getValueForKey:key];
+    NSString* userProfileJSON = [KeyValueStorage getValueForKey:key];
     
     if (!userProfileJSON || [userProfileJSON length] == 0) {
         return nil;
     }
     
-    NSDictionary* userProfileDict = [StoreUtils jsonStringToDict:userProfileJSON];
+    NSDictionary* userProfileDict = [SoomlaUtils jsonStringToDict:userProfileJSON];
     return [[UserProfile alloc] initWithDictionary:userProfileDict];
 }
 
