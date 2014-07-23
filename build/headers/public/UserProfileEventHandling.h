@@ -49,6 +49,7 @@
 #define DICT_ELEMENT_SOCIAL_ACTION_TYPE         @"socialActiontype"
 #define DICT_ELEMENT_MESSAGE                    @"message"
 #define DICT_ELEMENT_CONTACTS                   @"contacts"
+#define DICT_ELEMENT_FEEDS                      @"feeds"
 #define DICT_ELEMENT_REWARD                     @"reward"
 #define DICT_ELEMENT_IS_BADGE                   @"isBadge"
 
@@ -65,12 +66,12 @@
 + (void)postLogoutStarted:(enum Provider)provider;
 + (void)postLogoutFinished:(UserProfile *)userProfile;
 + (void)postLogoutFailed:(NSString *)message;
-+ (void)postSocialActionStarted:(enum SocialActionType)socialActionType;
-+ (void)postSocialActionFinished:(enum SocialActionType)socialActionType;
-+ (void)postSocialActionFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
-+ (void)postGetContactsStarted:(enum SocialActionType)socialActionType;
-+ (void)postGetContactsFinished:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts;
-+ (void)postGetContactsFailed:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
++ (void)postSocialActionStarted:(enum Provider)provider withType:(enum SocialActionType)socialActionType;
++ (void)postSocialActionFinished:(enum Provider)provider withType:(enum SocialActionType)socialActionType;
++ (void)postSocialActionFailed:(enum Provider)provider withType:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
++ (void)postGetContactsStarted:(enum Provider)provider withType:(enum SocialActionType)socialActionType;
++ (void)postGetContactsFinished:(enum Provider)provider withType:(enum SocialActionType)socialActionType withContacts:(NSArray *)contacts;
++ (void)postGetContactsFailed:(enum Provider)provider withType:(enum SocialActionType)socialActionType withMessage:(NSString *)message;
 + (void)postRewardGiven:(Reward *)reward;
 
 @end
