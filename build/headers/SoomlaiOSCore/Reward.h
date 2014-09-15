@@ -23,7 +23,7 @@
     Schedule* schedule;
 }
 
-@property (nonatomic, retain) Schedule* schedule;
+@property (nonatomic) Schedule* schedule;
 
 
 - (id)initWithRewardId:(NSString *)oRewardId andName:(NSString *)oName;
