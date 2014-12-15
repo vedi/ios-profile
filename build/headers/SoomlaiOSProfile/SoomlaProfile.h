@@ -101,6 +101,13 @@
 - (UserProfile *)getStoredUserProfileWithProvider:(Provider)provider;
 
 /**
+ Retrives user profiles which are stored on the device
+ 
+ @return an Array of `UserProfile`s which have been stored on the device
+ */
+- (NSArray *)getStoredUserProfiles;
+
+/**
  Shares the given status to the user's feed and grants the user a reward.
  
  @param provider The provider to use
