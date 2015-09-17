@@ -1,4 +1,6 @@
 #!/bin/sh
 set -e
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd $DIR/soomla-ios-core
 $DIR/soomla-ios-core/build_all
+cd -
